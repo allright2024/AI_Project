@@ -1,0 +1,5 @@
+./data
+./faiss_law_index
+.env
+embedstore.py
+serving.py
