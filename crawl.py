@@ -2,18 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from datetime import datetime, timedelta
+import os
 import json
 import argparse
 
 # get command line arguments
 parser = argparse.ArgumentParser(description="Crawl SKKU notice posts")
-parser.add_argument("--filename", type=str, default="skku_cci_posts.json", help="JSON output file name")
-parser.add_argument("--url", type=str, default="https://sw.skku.edu/sw/notice.do", help="Base URL to crawl")
+parser.add_argument("--days", type=int, default=90, help="post date threshold")
 args = parser.parse_args()
 
-# arguments sending requests to server
-BASE_URL = args.url
-ARTICLE_NUM = 500
+DIR = os.path.dirname(os.path.abspath(__file__))
+DAYS = args.days # post date threshold
+ARTICLE_NUM = DAYS * 5
 LIST_URL = f"?mode=list&&articleLimit={ARTICLE_NUM}"
 HEADERS = {
     "User-Agent": (
@@ -23,9 +23,19 @@ HEADERS = {
     )
 }
 
-def get_post_list():
+urls = [
+    "https://sw.skku.edu/sw/notice.do",
+    "https://cse.skku.edu/cse/notice.do",
+]
+
+filenames = [
+    "skku_cci_posts.json",
+    "skku_cse_posts.json",
+]
+
+def get_post_list(notice_url):
     # send request to site
-    resp = requests.get(urljoin(BASE_URL, LIST_URL), headers=HEADERS)
+    resp = requests.get(urljoin(notice_url, LIST_URL), headers=HEADERS)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -43,7 +53,7 @@ def get_post_list():
         post_date = datetime.strptime(post_date, "%Y-%m-%d")
         
         # stop searching if it is more than 3 months
-        if(datetime.now() - post_date > timedelta(days=90)):
+        if(datetime.now() - post_date > timedelta(days=DAYS)):
             break
 
         # reference a tag
@@ -53,7 +63,7 @@ def get_post_list():
 
         # clean up url
         href = a_tag.get("href")
-        post_url = urljoin(BASE_URL, href)
+        post_url = urljoin(notice_url, href)
         post_url = post_url.replace("&article.offset=0&articleLimit=500", "")
 
         # add post url to list
@@ -115,7 +125,7 @@ def get_post(post_url):
         
         # clean up url
         href = file_link.get("href")
-        file_url = urljoin(BASE_URL, href)
+        file_url = urljoin(post_url, href).replace("&article.offset=0&articleLimit=500", "")
         file_url = file_url.replace("&article.offset=0&articleLimit=500", "")
         files.append(file_url)
 
@@ -152,30 +162,111 @@ def get_post(post_url):
         "category": category,
         "title": title,
         "department": department,
+        "post_link": post_url, # link to original post
         "views": views,
         "date": date,
         "files": files,
         "images": images,
-        "links": links,
+        "attached_links": links,
         "content": content
     }
 
     return post
 
-def main():
-    # get list of posts
-    post_urls = get_post_list()
-    print(f"Found {len(post_urls)} posts\n")
-
-    # collect information from each post
+# separate crawling for skku homepage
+# average post per day is significantly bigger than cci & cse
+def get_skku_main(skku_url):
     posts = []
-    for post_url in post_urls:
-        post = get_post(post_url)
-        posts.append(post)
-         
-    # save to json
-    with open(args.filename, "w", encoding="utf-8") as f:
-        json.dump(posts, f, ensure_ascii=False, indent=4)
+    offset = 0
+    cutoff_date = datetime.now() - timedelta(days=DAYS)
+
+    while True:
+        offset_suffix = f"?mode=list&&articleLimit=10&article.offset={offset}"
+        resp = requests.get(urljoin(skku_url, offset_suffix), headers=HEADERS)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+
+        li_list = soup.select("ul.board-list-wrap > li")
+        if not li_list:
+            break  # no more posts
+
+        stop_scraping = False
+
+        for li in li_list:
+            info_li = li.select("dd.board-list-content-info ul > li")
+            post_date_str = info_li[2].get_text(strip=True) if len(info_li) >= 3 else ""
+            try:
+                post_date = datetime.strptime(post_date_str, "%Y-%m-%d")
+            except ValueError:
+                continue
+
+            if post_date < cutoff_date:
+                stop_scraping = True
+                break
+
+            a_tag = li.select_one("a")
+            if not a_tag:
+                continue
+
+            post_url = urljoin(skku_url, a_tag.get("href"))
+            post_url = post_url.replace(offset_suffix, "")
+
+            # get full post details
+            post = get_post(post_url)
+            posts.append(post)
+
+        if stop_scraping:
+            break
+
+        offset += 10
+
+    return posts
 
 if __name__ == "__main__":
-    main()
+    # crawl cci & cse
+    for i in range(len(urls)):
+        filepath = os.path.join(DIR, filenames[i])  
+
+        # check last updated time
+        if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+            with open(filenames[i], "r", encoding="utf-8") as f:
+                data = json.load(f)
+                last_updated = datetime.strptime(data["last_updated"], "%Y-%m-%d %H:%M:%S")
+                if datetime.now() - last_updated < timedelta(hours=6):
+                    delta = datetime.now() - last_updated
+                    hours, remainder = divmod(int(delta.total_seconds()), 3600)
+                    minutes, _ = divmod(remainder, 60)
+
+                    if hours > 0:
+                        print(f"Last updated {hours} hours {minutes} minutes ago, skipping update...")
+                    else:
+                        print(f"Last updated {minutes} minutes ago, skipping update...")
+                    continue
+        else:
+            print(f"{filepath} is empty or does not exist.")
+            data = {
+                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "posts": []
+            }
+            with open(filenames[i], "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+
+        _urls = get_post_list(urls[i])
+        print(f"Found {len(_urls)} posts\n")
+
+        posts = []
+        for post_url in _urls:
+            post = get_post(post_url)
+            posts.append(post)
+
+        output = {
+            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "posts": posts
+        }
+        
+        # save to json
+        with open(filenames[i], "w", encoding="utf-8") as f:
+            json.dump(output, f, ensure_ascii=False, indent=4)
+
+    # crawl skku homepage
+    # print(get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do"))
