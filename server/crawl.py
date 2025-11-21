@@ -123,11 +123,9 @@ def get_post(post_url):
         file_link = li.select_one("a")
         if not file_link:
             continue
-        
         # clean up url
         href = file_link.get("href")
-        file_url = urljoin(post_url, href).replace("&article.offset=0&articleLimit=500", "")
-        file_url = file_url.replace("&article.offset=0&articleLimit=500", "")
+        file_url = urljoin(post_url, href).replace(f"&article.offset=0&articleLimit={ARTICLE_NUM}", "")
         files.append(file_url)
 
     # reference content container
@@ -163,7 +161,7 @@ def get_post(post_url):
         "category": category,
         "title": title,
         "department": department,
-        "post_link": post_url, # link to original post
+        "post_link": post_url.replace(f"&article.offset=0&articleLimit={ARTICLE_NUM}", ""), # link to original post
         "views": views,
         "date": date,
         "files": files,
