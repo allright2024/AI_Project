@@ -306,14 +306,14 @@ def get_skku_post(post_url):
 
     return post
 
-def check_outdated():
+def check_outdated(filename):
     # set file path
-    filepath = os.path.join(DIR, filenames[i])  
+    filepath = os.path.join(DIR, filename)  
 
     # check last updated time
     if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
         # read file to check update time
-        with open(filenames[i], "r", encoding="utf-8") as f:
+        with open(filename, "r", encoding="utf-8") as f:
             data = json.load(f)
             last_updated = datetime.strptime(data["last_updated"], "%Y-%m-%d %H:%M:%S")
 
@@ -342,7 +342,7 @@ def check_outdated():
             "posts": []
         }
         # create a new empty file with update time
-        with open(filenames[i], "w", encoding="utf-8") as f:
+        with open(filename, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
 
         return True
@@ -350,7 +350,7 @@ def check_outdated():
 if __name__ == "__main__":
     # crawl cci & cse
     for i in range(len(urls)):
-        if not check_outdated():
+        if not check_outdated(filenames[i]):
             continue
 
         # scrape all post links
@@ -373,11 +373,13 @@ if __name__ == "__main__":
             json.dump(output, f, ensure_ascii=False, indent=4)
 
     # crawl skku homepage
-    skku_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+    if check_outdated("skku_posts.json") or args.force_update:
+        # get all post information
+        skku_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
 
-    # save to json
-    with open("skku_posts.json", "w", encoding="utf-8") as f:
-        json.dump({
-            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "posts": skku_posts
-        }, f, ensure_ascii=False, indent=4)
+        # save to json
+        with open("skku_posts.json", "w", encoding="utf-8") as f:
+            json.dump({
+                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "posts": skku_posts
+            }, f, ensure_ascii=False, indent=4)
