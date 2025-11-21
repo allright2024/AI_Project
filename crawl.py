@@ -182,7 +182,10 @@ def get_skku_main(skku_url):
     cutoff_date = datetime.now() - timedelta(days=DAYS)
 
     while True:
+        # set url suffix
         offset_suffix = f"?mode=list&&articleLimit=10&article.offset={offset}"
+
+        # request server
         resp = requests.get(urljoin(skku_url, offset_suffix), headers=HEADERS)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -190,7 +193,8 @@ def get_skku_main(skku_url):
         li_list = soup.select("ul.board-list-wrap > li")
         if not li_list:
             break  # no more posts
-
+        
+        # break condition
         stop_scraping = False
 
         for li in li_list:
@@ -210,18 +214,97 @@ def get_skku_main(skku_url):
                 continue
 
             post_url = urljoin(skku_url, a_tag.get("href"))
-            post_url = post_url.replace(offset_suffix, "")
+            post_url = post_url.replace(f"&article.offset={offset}&articleLimit=10", "")
 
             # get full post details
-            post = get_post(post_url)
+            post = get_skku_post(post_url)
             posts.append(post)
 
         if stop_scraping:
             break
 
         offset += 10
+        print(f"Request for page {offset // 10} complete.")
 
     return posts
+
+def get_skku_post(post_url):
+        # send request to site
+    resp = requests.get(post_url, headers=HEADERS)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "html.parser")
+
+    ##################################
+    # post information
+    ##################################
+
+    # reference title container
+    title_div = soup.find("th", attrs={"scope": "col"})
+
+    if title_div:
+        # get <span> as category
+        category_tag = title_div.select_one("span.category")
+        category = category_tag.get_text(strip=True).strip("[]") if category_tag else ""
+
+        title_text = title_div.select_one("em.ellipsis")
+        title = title_text.get_text(strip=True) if title_text else ""
+    else:
+        category = ""
+        title = ""
+
+    date = title_div.select_one("span.date").get_text(strip=True) # date posted
+
+    ##################################
+    # post contents
+    ##################################
+
+    # extract file links
+    files = []
+    for li in soup.select("ul.filedown_list > li"):
+        # select a tag
+        file_link = li.select_one("a")
+        if not file_link:
+            continue
+        
+        # clean up url
+        href = file_link.get("href")
+        file_url = urljoin(post_url, href)
+        files.append(file_url)
+
+    # reference content container
+    content_div = soup.select_one("table.board_view")
+
+    # extract image URLs
+    images = []
+    if content_div:
+        for img in content_div.find_all("img", src=True):
+            img_url = img["src"]
+            # convert relative url to absolute
+            img_url = urljoin("https://skku.edu", img_url)
+            images.append(img_url)
+
+    # extract content as text
+    content = content_div.get_text(strip=True) if content_div else ""
+    
+    ##################################
+    # assemble information
+    ##################################
+
+    # assemble into json format
+    post = {
+        "category": category,
+        "title": title,
+        "department": "SKKU",
+        "post_link": post_url, # link to original post
+        # "views": views,
+        "date": date,
+        "files": files,
+        "images": images,
+        # "attached_links": links,
+        "content": content
+    }
+
+    return post
 
 def check_outdated():
     # set file path
@@ -290,4 +373,11 @@ if __name__ == "__main__":
             json.dump(output, f, ensure_ascii=False, indent=4)
 
     # crawl skku homepage
-    # print(get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do"))
+    skku_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+
+    # save to json
+    with open("skku_posts.json", "w", encoding="utf-8") as f:
+        json.dump({
+            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "posts": skku_posts
+        }, f, ensure_ascii=False, indent=4)
