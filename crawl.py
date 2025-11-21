@@ -9,7 +9,7 @@ import argparse
 # get command line arguments
 parser = argparse.ArgumentParser(description="Crawl SKKU notice posts")
 parser.add_argument("--days", type=int, default=90, help="post date threshold")
-parser.add_argument("--force-update", type=bool, default=False, help="force update regardless of update time")
+parser.add_argument("--force-update", action="store_true", help="force update regardless of update time")
 args = parser.parse_args()
 
 DIR = os.path.dirname(os.path.abspath(__file__))
@@ -355,7 +355,7 @@ if __name__ == "__main__":
 
         # scrape all post links
         _urls = get_post_list(urls[i])
-        print(f"Found {len(_urls)} posts\n")
+        print(f"Found {len(_urls)} posts")
 
         # format post information
         posts = []
@@ -372,6 +372,8 @@ if __name__ == "__main__":
         with open(filenames[i], "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=4)
 
+        print(f"Updated {filenames[i]} at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+
     # crawl skku homepage
     if check_outdated("skku_posts.json") or args.force_update:
         # get all post information
@@ -383,3 +385,5 @@ if __name__ == "__main__":
                 "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "posts": skku_posts
             }, f, ensure_ascii=False, indent=4)
+
+        print(f"Updated skku_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
