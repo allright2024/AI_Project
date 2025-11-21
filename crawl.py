@@ -9,6 +9,7 @@ import argparse
 # get command line arguments
 parser = argparse.ArgumentParser(description="Crawl SKKU notice posts")
 parser.add_argument("--days", type=int, default=90, help="post date threshold")
+parser.add_argument("--force-update", type=bool, default=False, help="force update regardless of update time")
 args = parser.parse_args()
 
 DIR = os.path.dirname(os.path.abspath(__file__))
@@ -87,7 +88,7 @@ def get_post(post_url):
     if title_div:
         # get <span> as category
         category_tag = title_div.select_one("h4 span")
-        category = category_tag.get_text(strip=True) if category_tag else ""
+        category = category_tag.get_text(strip=True).strip("[]") if category_tag else ""
 
         # get the rest of the text inside <h4> (excluding <span>)
         h4_tag = title_div.select_one("h4")
@@ -222,38 +223,58 @@ def get_skku_main(skku_url):
 
     return posts
 
+def check_outdated():
+    # set file path
+    filepath = os.path.join(DIR, filenames[i])  
+
+    # check last updated time
+    if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+        # read file to check update time
+        with open(filenames[i], "r", encoding="utf-8") as f:
+            data = json.load(f)
+            last_updated = datetime.strptime(data["last_updated"], "%Y-%m-%d %H:%M:%S")
+
+            # up to date or user request force update
+            if datetime.now() - last_updated > timedelta(hours=6) or args.force_update:
+                print("Updating...")
+                return True
+            else:
+                # format time delta
+                delta = datetime.now() - last_updated
+                hours, remainder = divmod(int(delta.total_seconds()), 3600)
+                minutes, _ = divmod(remainder, 60)
+
+                if hours > 0:
+                    print(f"Last updated {hours} hours {minutes} minutes ago, skipping update...")
+                else:
+                    print(f"Last updated {minutes} minutes ago, skipping update...")
+
+                return False
+    else: # if file does not exist
+        print(f"{filepath} is empty or does not exist.")
+        
+        # create dummy data
+        data = {
+            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "posts": []
+        }
+        # create a new empty file with update time
+        with open(filenames[i], "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+
+        return True
+
 if __name__ == "__main__":
     # crawl cci & cse
     for i in range(len(urls)):
-        filepath = os.path.join(DIR, filenames[i])  
+        if not check_outdated():
+            continue
 
-        # check last updated time
-        if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
-            with open(filenames[i], "r", encoding="utf-8") as f:
-                data = json.load(f)
-                last_updated = datetime.strptime(data["last_updated"], "%Y-%m-%d %H:%M:%S")
-                if datetime.now() - last_updated < timedelta(hours=6):
-                    delta = datetime.now() - last_updated
-                    hours, remainder = divmod(int(delta.total_seconds()), 3600)
-                    minutes, _ = divmod(remainder, 60)
-
-                    if hours > 0:
-                        print(f"Last updated {hours} hours {minutes} minutes ago, skipping update...")
-                    else:
-                        print(f"Last updated {minutes} minutes ago, skipping update...")
-                    continue
-        else:
-            print(f"{filepath} is empty or does not exist.")
-            data = {
-                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "posts": []
-            }
-            with open(filenames[i], "w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
-
+        # scrape all post links
         _urls = get_post_list(urls[i])
         print(f"Found {len(_urls)} posts\n")
 
+        # format post information
         posts = []
         for post_url in _urls:
             post = get_post(post_url)
