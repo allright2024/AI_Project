@@ -1,15 +1,22 @@
 import os
 import json
+import glob
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
+import time
 
 # 환경 변수 로드 (.env 파일)
 load_dotenv()
 
 USER_MODEL_REQUREST = "gemini-2.5-flash-lite" 
-JSON_FILE_PATH = "skku_2.json" # 수정해야하는 부분
+JSON_FILE_DIR = "./crawl" # 크롤링한 파일 저장 위치
+JSON_FILE_NAME = "skku_*_posts.json" # 크롤링한 파일 이름 형식
+
+# find all files with format skku_*_posts.json
+pattern = os.path.join(JSON_FILE_DIR, JSON_FILE_NAME)
+files = glob.glob(pattern)
 
 try:
     llm = ChatGoogleGenerativeAI(
@@ -76,46 +83,51 @@ prompt = ChatPromptTemplate.from_template(extraction_template)
 extraction_chain = prompt | structured_llm
 
 def main():
-    notices = load_notices(JSON_FILE_PATH)
-    
-    if notices:
-        augmented_results = []
+    for file in files:
+        notices = load_notices(file)
+        notices = notices["posts"]
         
-        print("\n" + "="*50)
-        print(f"--- [단계 3] LLM 기반 날짜 추출 실행 (총 {len(notices)}개) ---")
-        
-        for i, notice in enumerate(notices): 
-            title = notice.get('title', '')
-            content = notice.get('content', '')
-            dates_field = notice.get('dates', [])
+        if notices:
+            augmented_results = []
             
-            print(f"\n[{i+1}/{len(notices)}] 처리 중: \"{title[:30]}...\"")
+            print("\n" + "="*50)
+            print(f"--- [단계 3] LLM 기반 날짜 추출 실행 (총 {len(notices)}개) ---")
             
-            try:
-                input_data = {
-                    "title": title, 
-                    "content": content,
-                    "dates": str(dates_field) 
-                }
+            for i, notice in enumerate(notices): 
+                title = notice.get('title', '')
+                content = notice.get('content', '')
+                dates_field = notice.get('dates', [])
                 
-                extracted_data = extraction_chain.invoke(input_data)
+                print(f"\n[{i+1}/{len(notices)}] 처리 중: \"{title[:30]}...\"")
                 
-                notice['start_date'] = extracted_data.start_date
-                notice['end_date'] = extracted_data.end_date
-                augmented_results.append(notice)
-                
-                print(f"  ▶ [결과] Start: {extracted_data.start_date} / End: {extracted_data.end_date}")
+                try:
+                    input_data = {
+                        "title": title, 
+                        "content": content,
+                        "dates": str(dates_field) 
+                    }
+                    
+                    extracted_data = extraction_chain.invoke(input_data)
 
-            except Exception as e:
-                print(f"  ❌ [오류] 문서 처리 실패: {e}")
+                    time.sleep(3) # To prevent hitting free-tier rate limit (remove if using paid version)
+                    
+                    notice['start_date'] = extracted_data.start_date
+                    notice['end_date'] = extracted_data.end_date
+                    augmented_results.append(notice)
+                    
+                    print(f"  ▶ [결과] Start: {extracted_data.start_date} / End: {extracted_data.end_date}")
+                    break
 
-        output_path = "skku_augmented.json"
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(augmented_results, f, indent=4, ensure_ascii=False)
-            
-        print("\n" + "="*50)
-        print(f"✅ 모든 작업 완료. 결과가 '{output_path}'에 저장되었습니다.")
-    else:
-        print("⚠️ 처리할 데이터가 없습니다. 파일 경로를 확인하세요.")
+                except Exception as e:
+                    print(f"  ❌ [오류] 문서 처리 실패: {e}")
+
+            output_path = file.replace("posts", "augmented").replace(JSON_FILE_DIR,".")
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(augmented_results, f, indent=4, ensure_ascii=False)
+                
+            print("\n" + "="*50)
+            print(f"✅ 모든 작업 완료. 결과가 '{output_path}'에 저장되었습니다.")
+        else:
+            print("⚠️ 처리할 데이터가 없습니다. 파일 경로를 확인하세요.")
 
 main() # -> 따로 호출하여 수행
