@@ -373,15 +373,15 @@ if __name__ == "__main__":
         print(f"Updated {filenames[i]} at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
 
     # crawl skku homepage
-    if check_outdated("skku_posts.json") or args.force_update:
+    if check_outdated("skku_main_posts.json") or args.force_update:
         # get all post information
-        skku_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+        skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
 
         # save to json
-        with open("skku_posts.json", "w", encoding="utf-8") as f:
+        with open("skku_main_posts.json", "w", encoding="utf-8") as f:
             json.dump({
                 "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "posts": skku_posts
+                "posts": skku_main_posts
             }, f, ensure_ascii=False, indent=4)
 
-        print(f"Updated skku_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+        print(f"Updated skku_main_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
