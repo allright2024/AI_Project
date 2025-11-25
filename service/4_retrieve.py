@@ -10,12 +10,14 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from pydantic import BaseModel, Field # LLM 출력을 구조화
+from pydantic import BaseModel, Field
 
 from rank_bm25 import BM25Okapi
-from tqdm import tqdm
+import numpy as np
 
-TODAY_STR = datetime.now().strftime('%Y-%m-%d') 
+load_dotenv()
+
+TODAY_STR = datetime.now().strftime('%Y-%m-%d')
 
 CHROMA_DB_PATH = './skku_notice_db'
 BM25_MODEL_PATH = 'bm25_model.pkl'
@@ -23,15 +25,14 @@ CHUNK_DATA_PATH = 'all_chunks.pkl'
 
 EMBEDDING_MODEL = "jhgan/ko-sbert-nli"
 COLLECTION_NAME = 'skku_notices'
-LLM_MODEL = "gemini-2.5-flash-lite" 
+LLM_MODEL = "gemini-2.5-flash-lite"
 
-VECTOR_SEARCH_K = 50  
-BM25_SEARCH_K = 50   
-FINAL_TOP_K = 5       
-load_dotenv()
+VECTOR_SEARCH_K = 50
+BM25_SEARCH_K = 50
+FINAL_TOP_K = 5
+
 llm = ChatGoogleGenerativeAI(model=LLM_MODEL, temperature=0)
 print(f"✅ [0단계] LLM ({LLM_MODEL}) 로드 완료.")
-
 
 
 class QueryFilter(BaseModel):
@@ -42,10 +43,9 @@ class QueryFilter(BaseModel):
 
 def get_query_filter(llm: ChatGoogleGenerativeAI, user_query: str, today: str) -> QueryFilter:
     print(f"\n🏛️ [1단계] 쿼리 변환 시작 (기준일: {today})...")
-    print(f"  - 원본 쿼리: \"{user_query}\"")
-
+    
     structured_llm = llm.with_structured_output(QueryFilter)
-
+    
     prompt = ChatPromptTemplate.from_messages([
         ("system", """
 당신은 사용자 쿼리를 분석하여 검색 필터로 변환하는 AI입니다.
@@ -61,19 +61,19 @@ def get_query_filter(llm: ChatGoogleGenerativeAI, user_query: str, today: str) -
 
 [쿼리 예시]
 "어제 끝난 행사 알려줘" (오늘이 2025-11-17이면)
-{{ "core_query": "행사", "start_date": "N/A", "end_date": "2025-11-16" }}
+-> {{ "core_query": "행사", "start_date": "N/A", "end_date": "2025-11-16" }}
 
 "신청할 수 있는 장학금"
-{{ "core_query": "신청 장학금", "start_date": "N/A", "end_date": "N/A" }}
+-> {{ "core_query": "신청 장학금", "start_date": "N/A", "end_date": "N/A" }}
 """),
         ("human", "쿼리: \"{user_query}\"")
     ])
-
+    
     query_transformer_chain = prompt | structured_llm
-
+    
     try:
         filter_obj = query_transformer_chain.invoke({
-            "user_query": user_query,
+            "user_query": user_query, 
             "today": today
         })
         print(f"  - 변환 완료: [Query: \"{filter_obj.core_query}\", Start: {filter_obj.start_date}, End: {filter_obj.end_date}]")
@@ -114,7 +114,7 @@ def load_indexes():
             persist_directory=CHROMA_DB_PATH,
             embedding_function=embeddings,
             collection_name=COLLECTION_NAME
-        ).as_retriever(search_kwargs={"k": VECTOR_SEARCH_K})
+        )
         print(f"  - ChromaDB Vector Store 로드 완료 ({CHROMA_DB_PATH})")
     except Exception as e:
         print(f"❌ 오류: ChromaDB 로드 실패: {e}")
@@ -123,9 +123,40 @@ def load_indexes():
     return bm25, all_chunks, all_chunks_map, chroma_collection
 
 
+def build_chroma_filter(start_f: str, end_f: str) -> dict:
+    """
+    ChromaDB 검색용 메타데이터 필터(Where 절)를 생성합니다. (Pre-Filtering용)
+    """
+    conditions = []
+
+    if start_f != "N/A":
+        conditions.append({
+            "$or": [
+                {"end_date": {"$gte": start_f}},
+                {"end_date": {"$eq": "N/A"}}
+            ]
+        })
+
+    if end_f != "N/A":
+        conditions.append({
+            "$or": [
+                {"start_date": {"$lte": end_f}},
+                {"start_date": {"$eq": "N/A"}}
+            ]
+        })
+
+    if not conditions:
+        return None
+    
+    if len(conditions) == 1:
+        return conditions[0]
+
+    return {"$and": conditions}
+
+
 def is_date_in_range(chunk_meta: dict, start_filter: str, end_filter: str) -> bool:
     """
-    'N/A'를 고려하여 청크의 메타데이터가 날짜 범위 필터를 통과하는지 확인합니다.
+    BM25 검색 결과 필터링을 위한 Python 함수 (Post-Filtering용)
     """
     chunk_start = chunk_meta.get('start_date', 'N/A')
     chunk_end = chunk_meta.get('end_date', 'N/A')
@@ -142,64 +173,68 @@ def is_date_in_range(chunk_meta: dict, start_filter: str, end_filter: str) -> bo
 
 
 def hybrid_search(query_filter: QueryFilter, collection, bm25, all_chunks, all_chunks_map):
-    print("\n🏛️ [3단계] 하이브리드 검색 및 필터링 시작...")
+    print("\n🏛️ [3단계] 하이브리드 검색 시작 (Pre-Filtering 적용)...")
     
     start_f = query_filter.start_date
     end_f = query_filter.end_date
     core_query = query_filter.core_query
 
-    print(f"  - (A) Vector DB 검색 (K={VECTOR_SEARCH_K})...")
-    vector_results = collection.invoke(core_query) 
-    
-    vector_filtered = {}
-    for doc in vector_results:
-        chunk_id = doc.metadata.get('id', doc.metadata.get('doc_id'))
-        if not chunk_id: Warning("Chunk ID not found in metadata")
-        
-        if is_date_in_range(doc.metadata, start_f, end_f):
-            vector_filtered[chunk_id] = doc.metadata.get('_score', 1.0)
+    chroma_filter = build_chroma_filter(start_f, end_f)
+    print(f"  - Chroma Filter 조건: {chroma_filter}")
 
-    print(f"    - Vector 결과: {len(vector_results)}개 중 {len(vector_filtered)}개 필터 통과.")
+    vector_results_with_score = collection.similarity_search_with_score(
+        query=core_query,
+        k=VECTOR_SEARCH_K, 
+        filter=chroma_filter 
+    )
 
-    print(f"  - (B) BM25 검색 (전체 {len(all_chunks)}개 스캔)...")
+    print(f"    - Vector(Pre-filtered) 결과: {len(vector_results_with_score)}개 반환됨.")
+
+    print(f"  - BM25 검색 (전체 {len(all_chunks)}개 스캔)...")
     tokenized_query = core_query.split()
     bm25_scores = bm25.get_scores(tokenized_query)
     
+    top_n_indices = np.argsort(bm25_scores)[::-1][:BM25_SEARCH_K * 3]
+
     bm25_filtered = {}
-    for score, chunk in zip(bm25_scores, all_chunks):
-        if score > 0:
-            if is_date_in_range(chunk['metadata'], start_f, end_f):
-                bm25_filtered[chunk['id']] = score
-    
-    print(f"    - BM25 결과: {len(all_chunks)}개 중 {len(bm25_filtered)}개 필터 통과 (점수 > 0).")
+    for idx in top_n_indices:
+        score = bm25_scores[idx]
+        if score <= 0: continue
+        
+        chunk = all_chunks[idx]
+        # 날짜 필터링 수행
+        if is_date_in_range(chunk['metadata'], start_f, end_f):
+            bm25_filtered[chunk['id']] = score
+
+    print(f"    - BM25(Post-filtered) 결과: {len(bm25_filtered)}개 통과.")
 
     print(f"  - (C) RRF 융합 중...")
     
-    vec_ranked = sorted(vector_filtered.items(), key=lambda item: item[1], reverse=True)
-    bm25_ranked = sorted(bm25_filtered.items(), key=lambda item: item[1], reverse=True)
-
     rrf_scores = {}
     k = 60 
 
-    for rank, (chunk_id, score) in enumerate(vec_ranked):
-        if chunk_id not in rrf_scores:
-            rrf_scores[chunk_id] = 0
-        rrf_scores[chunk_id] += 1 / (k + rank)
+    for rank, (doc, score) in enumerate(vector_results_with_score):
+        chunk_id = doc.metadata.get('id')
+        if chunk_id:
+            if chunk_id not in rrf_scores: rrf_scores[chunk_id] = 0
+            rrf_scores[chunk_id] += 1 / (k + rank)
 
-    for rank, (chunk_id, score) in enumerate(bm25_ranked):
-        if chunk_id not in rrf_scores:
-            rrf_scores[chunk_id] = 0
+    bm25_sorted = sorted(bm25_filtered.items(), key=lambda item: item[1], reverse=True)
+    for rank, (chunk_id, score) in enumerate(bm25_sorted):
+        if chunk_id not in rrf_scores: rrf_scores[chunk_id] = 0
         rrf_scores[chunk_id] += 1 / (k + rank)
 
     fused_results = sorted(rrf_scores.items(), key=lambda item: item[1], reverse=True)
-    
     print(f"  - 융합 완료: 최종 {len(fused_results)}개 청크 후보.")
     
     final_chunks_text = []
     for chunk_id, score in fused_results[:FINAL_TOP_K]:
         if chunk_id in all_chunks_map:
             chunk = all_chunks_map[chunk_id]
-            chunk_text = f"--- [출처: {chunk['metadata']['title']}]\n"
+            url = chunk['metadata'].get('url', '')
+            
+            chunk_text = f"--- [출처: {chunk['metadata']['title']}] ---\n"
+            if url: chunk_text += f"[원본 링크: {url}]\n"
             chunk_text += f"{chunk['text']}\n"
             final_chunks_text.append(chunk_text)
         
@@ -210,7 +245,7 @@ def generate_answer(llm: ChatGoogleGenerativeAI, context: str, user_query: str):
     print("\n🏛️ [4단계] RAG 답변 생성 시작...")
 
     if not context:
-        print("  - 검색된 컨텍스트가 없습니다. LLM이 자체적으로 답변합니다.")
+        print("  - 검색된 컨텍스트가 없습니다.")
         context = "검색된 관련 공지사항이 없습니다."
 
     prompt = ChatPromptTemplate.from_template(f"""
@@ -218,10 +253,10 @@ def generate_answer(llm: ChatGoogleGenerativeAI, context: str, user_query: str):
 제공된 [공지사항 컨텍스트]를 바탕으로 [사용자 쿼리]에 대해 친절하게 답변하세요.
 
 지침:
-1. 컨텍스트에 근거하여 답변해야 합니다.
-2. 컨텍스트에 내용이 없으면 "관련 공지사항을 찾지 못했습니다."라고 솔직하게 답변하세요.
-3. 답변 시, 근거가 된 공지사항의 [출처: 제목]을 명확히 언급해야 합니다.
-4. 답변 마지막에, 관련 공지사항의 원본 링크(컨텍스트의 'URL')를 "자세히 보기" 목록으로 제공하세요.
+1. 반드시 제공된 [공지사항 컨텍스트]에 기반하여 답변하세요.
+2. 컨텍스트에 없는 내용은 지어내지 말고 "관련 공지사항을 찾지 못했습니다"라고 하세요.
+3. 답변 시 출처(제목)를 언급하고, 제공된 '원본 링크'가 있다면 답변 끝에 목록으로 정리해 주세요.
+4. 사용자 질문이 '오늘 가능한' 것을 묻는다면, 날짜를 꼼꼼히 확인하세요.
 
 ---
 [공지사항 컨텍스트]
@@ -235,30 +270,28 @@ def generate_answer(llm: ChatGoogleGenerativeAI, context: str, user_query: str):
 """)
 
     rag_chain = prompt | llm | StrOutputParser()
-    
     response = rag_chain.invoke({"context": context, "user_query": user_query})
-    
     print("✅ [5단계] 최종 답변 생성 완료.")
     return response
 
 
 if __name__ == "__main__":
-    
     USER_QUERY = "오늘 신청할 수 있는 융합연구학점제 공지 있어?"
     
-    print("="*50)
+    print("="*60)
     print(f"RAG 파이프라인 시작 (기준일: {TODAY_STR})")
     print(f"사용자 쿼리: \"{USER_QUERY}\"")
-    print("="*50)
+    print("="*60)
 
-    bm25_model, all_chunks_list, chunks_map, chroma_retriever = load_indexes()
+    # 인덱스 로드
+    bm25_model, all_chunks_list, chunks_map, chroma_collection = load_indexes()
     
-    if bm25_model:
+    if bm25_model and chroma_collection:
         query_filter = get_query_filter(llm, USER_QUERY, TODAY_STR)
         
         context_string = hybrid_search(
             query_filter, 
-            chroma_retriever, 
+            chroma_collection, 
             bm25_model, 
             all_chunks_list,
             chunks_map
@@ -266,10 +299,9 @@ if __name__ == "__main__":
         
         final_response = generate_answer(llm, context_string, USER_QUERY)
         
-        print("\n" + "="*50)
+        print("\n" + "="*60)
         print("[최종 생성 답변]")
-        print("="*50)
+        print("="*60)
         print(final_response)
     else:
         print("오류: 인덱스 파일 로드에 실패하여 RAG 파이프라인을 실행할 수 없습니다.")
-        print("먼저 build_index.py를 실행했는지 확인하세요.")
