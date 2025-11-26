@@ -1,3 +1,10 @@
+'''
+python crawl.py                     ; update jsons
+python crawl.py --days={time delta} ; set post crawling range in days
+python crawl.py --clean-slate       ; clean slates all jsons, crawl everything again (only when data is corrupt)
+python crawl.py --force-update      ; forces update regardless of last update time
+'''
+
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
@@ -49,10 +56,20 @@ urls = [
     # "https://nano.skku.edu/bbs/board.php?tbl=bbs42", # 나노공학과
     "https://qie.skku.edu/qie/notice.do", # 양자정보공학과
     "https://biotech.skku.edu/biotech/community/under_notice.do", # 생명공학대학
-    "https://skb.skku.edu/foodlife/community/notice_grad.do", # 식품생명공학과
-    "https://skb.skku.edu/biomecha/community/notice.do", # 바이오메카트로닉스학과
-    "https://skb.skku.edu/gene/community/under_notice.do", # 융합생명공학과
+    # "https://skb.skku.edu/foodlife/community/notice_grad.do", # 식품생명공학과
+    # "https://skb.skku.edu/biomecha/community/notice.do", # 바이오메카트로닉스학과
+    # "https://skb.skku.edu/gene/community/under_notice.do", # 융합생명공학과
+    # 마지막 3개 학과랑 소재부품융합공학과는 도메인이 같아서 1개 빼고 나머지 임시로 비활성화했습니다
 ]
+
+def parse_date(date):
+    for fmt in ("%Y-%m-%d %H:%M", "%Y-%m-%d"):
+        try:
+            dt = datetime.strptime(date, fmt)
+            return dt  # convert to date object (YYYY-MM-DD)
+        except ValueError:
+            continue
+    return None
 
 def get_post_list(notice_url):
     # send request to site
@@ -73,13 +90,7 @@ def get_post_list(notice_url):
         
         # convert to datetime object
         # post_date = datetime.strptime(post_date, "%Y-%m-%d")
-        post_date = None
-        for fmt in ("%Y-%m-%d %H:%M", "%Y-%m-%d"):
-            try:
-                post_date = datetime.strptime(post_date_str, fmt)
-                break
-            except ValueError:
-                continue
+        post_date = parse_date(post_date_str)
         
         if post_date is None:
             continue
@@ -239,12 +250,13 @@ def get_skku_main(skku_url, latest_url=None):
         # break condition
         stop_scraping = False
 
+        new_posts = 0
         for li in li_list:
             info_li = li.select("dd.board-list-content-info ul > li")
             post_date_str = info_li[2].get_text(strip=True) if len(info_li) >= 3 else ""
-            try:
-                post_date = datetime.strptime(post_date_str, "%Y-%m-%d")
-            except ValueError:
+            post_date = parse_date(post_date_str)
+            
+            if post_date is None:
                 continue
 
             if post_date < cutoff_date:
@@ -259,11 +271,13 @@ def get_skku_main(skku_url, latest_url=None):
             post_url = post_url.replace(f"&article.offset={offset}&articleLimit=10", "")
 
             if post_url == latest_url:
+                print(f"Total {new_posts} posts were updated.")
                 return posts
 
             # get full post details
             post = get_skku_post(post_url)
             posts.append(post)
+            new_posts += 1
 
         if stop_scraping:
             break
@@ -405,7 +419,8 @@ if __name__ == "__main__":
 
         # scrape all post links
         _urls_pinned, _urls = get_post_list(urls[i])
-        print(f"Found {len(_urls)} posts")
+        if args.clean_slate:
+            print(f"Found {len(_urls)} posts")
 
         # check files to update only
         if not args.clean_slate:
@@ -423,22 +438,34 @@ if __name__ == "__main__":
                 else: # empty list
                     latest_post_url = None
 
-                # remove outdated posts
+                # remove outdated pinned posts
                 while True:
                     if len(data["pinned_posts"]) == 0:
                         break
 
-                    _date = datetime.strptime(data["pinned_posts"][len(data["pinned_posts"]) - 1]["date"], "%Y-%m-%d")
+                    _date = parse_date(data["pinned_posts"][len(data["pinned_posts"]) - 1]["date"])
+                    if _date is None:
+                        print("Cannot parse date from json.")
+                        break
+
                     if datetime.now() - _date > timedelta(days=DAYS):
                         data["pinned_posts"].pop()
                     else: 
                         break
 
+                    if len(data["pinned_posts"]) == 0:
+                        break
+
+                # remove outdated posts
                 while True:
                     if len(data["posts"]) == 0:
                         break
 
-                    _date = datetime.strptime(data["posts"][len(data["posts"]) - 1]["date"], "%Y-%m-%d")
+                    _date = parse_date(data["posts"][len(data["posts"]) - 1]["date"])
+                    if _date is None:
+                        print("Cannot parse date from json.")
+                        break
+
                     if datetime.now() - _date > timedelta(days=DAYS):
                         data["posts"].pop()
                     else: 
@@ -482,23 +509,25 @@ if __name__ == "__main__":
             json.dump(output, f, ensure_ascii=False, indent=4)
 
         print(f"Updated {filename} at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+        print("=" * 75)
 
     # crawl skku homepage
-    if check_outdated("skku_main_posts.json") or args.force_update or args.clean_slate:
-        if not args.clean_slate:
-            with open("skku_main_posts.json", "r", encoding="utf-8") as f:
-                data = json.load(f)
-                latest = data["posts"][0]["post_link"] if len(data["posts"]) > 0 else []
-                skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do",latest_url=latest)
-        else:
-            # get all post information
-            skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+    if args.clean_slate:
+        # get all post information
+        skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+    if check_outdated("skku_main_posts.json") or args.force_update:
+        with open("skku_main_posts.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            latest = data["posts"][0]["post_link"] if len(data["posts"]) > 0 else []
+            skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do",latest_url=latest)
 
         # save to json
-        with open("skku_main_posts.json", "w", encoding="utf-8") as f:
+        temp_file = "skku_main_posts.json.tmp" # in case of interrupt, prevent the file from resetting to clean slate
+        with open(temp_file, "w", encoding="utf-8") as f:
             json.dump({
                 "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "posts": skku_main_posts
+                "posts": skku_main_posts + data.get("posts", [])
             }, f, ensure_ascii=False, indent=4)
+        os.replace(temp_file, "skku_main_posts.json")
 
         print(f"Updated skku_main_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
