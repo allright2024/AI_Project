@@ -1,12 +1,12 @@
 {
-    "last_updated": "2025-11-26 17:52:31",
-    "posts": [
+    "last_updated": "2025-11-26 20:57:18",
+    "pinned_posts": [
         {
             "category": "채용/모집",
             "title": "[공지] SSA(SungKyun Software Assistant) 인력 모집 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209965",
-            "views": 233,
+            "views": 301,
             "date": "2025-11-26",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=209965&attachNo=180412",
@@ -21,7 +21,7 @@
             "title": "[졸업평가] 2025-2학기 소프트웨어학과 연구논문/작품 발표회 개최 안내 (11/26수)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209920",
-            "views": 276,
+            "views": 307,
             "date": "2025-11-25",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=209920&attachNo=180351"
@@ -35,7 +35,7 @@
             "title": "[인턴십] 서류 제출 안내 - 2026년 2월(동계) 졸업 예정자 중 미제출자 대상",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209222",
-            "views": 1917,
+            "views": 1938,
             "date": "2025-11-11",
             "files": [],
             "images": [],
@@ -43,13 +43,15 @@
                 "https://contact.worksmobile.com/v2/p/popup/organization/chart?keyword=&language=ko_KR"
             ],
             "content": "[인턴십 서류 제출 안내 - 2026년 2월(동계) 졸업 예정자 중 미제출자 대상]\n학과 인턴십과 관련하여 2026년 2월(동계) 졸업을 희망하는 학생은 졸업평가 심의에 필요한 행정 절차로 인해\n*\n*2025년 12월 19일(금)\n**까지 인턴십 관련 서류를 제출해주시기 바랍니다.\n(미제출자에 한함)\n※ 기한 내 제출하지 않을 경우 동계 졸업이 어려울 수 있으니 유의하시기 바랍니다.\n※ 이미 서류를 제출한 학생은 다시 제출하지 않으셔도 됩니다.\n기타 문의사항이 있으신 경우 학과 사무실로 연락주시기 바랍니다.\n문의 :\n소프트웨어학과사무실 (031-299-4101 /\njeahn@skku.edu\n)"
-        },
+        }
+    ],
+    "posts": [
         {
             "category": "채용/모집",
             "title": "[한화생명] 2026년 신입사원 채용",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209990",
-            "views": 31,
+            "views": 78,
             "date": "2025-11-26",
             "files": [],
             "images": [
@@ -63,7 +65,7 @@
             "title": "2026 소프트웨어 산업전망 컨퍼런스 개최 안내 (12/2화)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209923",
-            "views": 176,
+            "views": 203,
             "date": "2025-11-25",
             "files": [],
             "images": [
@@ -80,7 +82,7 @@
             "title": "[PFCT] AI 신용평가 아카데미 3기 모집 (신청기한 ~11/30)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209917",
-            "views": 127,
+            "views": 152,
             "date": "2025-11-25",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=209917&attachNo=180347",
@@ -99,7 +101,7 @@
             "title": "[서울대학교] 제12기 서울대학교 빅데이터 AI 핀테크 고급 전문가 과정 교육생 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209906",
-            "views": 143,
+            "views": 168,
             "date": "2025-11-25",
             "files": [],
             "images": [
@@ -113,7 +115,7 @@
             "title": "2025-2학기 문제해결 기말시험 부감독 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209864",
-            "views": 382,
+            "views": 416,
             "date": "2025-11-24",
             "files": [],
             "images": [],
@@ -127,7 +129,7 @@
             "title": "[대한상공회의소] K-Digital Training(KDT) 과정 국비교육생 모집 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209838",
-            "views": 144,
+            "views": 169,
             "date": "2025-11-24",
             "files": [],
             "images": [
@@ -144,7 +146,7 @@
             "title": "2025학년도 동계 학부생 연구학점제[URP 1형] 시행안내(신청기간 11/26~12/3)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209729",
-            "views": 409,
+            "views": 438,
             "date": "2025-11-20",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=209729&attachNo=180124",
@@ -160,7 +162,7 @@
             "title": "[75회] 글로벌 IT전문가와 킹고인의 만남 시즌2 (11/29, 수, 12시)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209722",
-            "views": 284,
+            "views": 311,
             "date": "2025-11-20",
             "files": [],
             "images": [
@@ -179,7 +181,7 @@
             "title": "SKKU NLP Lab 인턴 모집 (지도교수: 고영중 교수)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209720",
-            "views": 654,
+            "views": 693,
             "date": "2025-11-20",
             "files": [],
             "images": [],
@@ -195,7 +197,7 @@
             "title": "토스 25년도 2학기 Frontend Platform Assistant 모집(~12/1)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209717",
-            "views": 529,
+            "views": 556,
             "date": "2025-11-20",
             "files": [],
             "images": [
@@ -212,7 +214,7 @@
             "title": "카카오클라우드 AIaaS 마스터 클래스 4기 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209702",
-            "views": 413,
+            "views": 437,
             "date": "2025-11-20",
             "files": [],
             "images": [
@@ -226,7 +228,7 @@
             "title": "[공지] SSA(SungKyun Software Assistant) 인력 모집 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209686",
-            "views": 522,
+            "views": 549,
             "date": "2025-11-20",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=209686&attachNo=179879",
@@ -241,7 +243,7 @@
             "title": "3품인증제 일부 인증 취득기준 변경 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209524",
-            "views": 599,
+            "views": 626,
             "date": "2025-11-18",
             "files": [],
             "images": [],
@@ -255,7 +257,7 @@
             "title": "2025년 제4회 START業 FORUM",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209494",
-            "views": 1089,
+            "views": 1110,
             "date": "2025-11-17",
             "files": [],
             "images": [
@@ -275,7 +277,7 @@
             "title": "[롯데그룹] 2025 Winter LOTTE Job Cafe 사전신청",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209456",
-            "views": 409,
+            "views": 430,
             "date": "2025-11-17",
             "files": [],
             "images": [
@@ -289,7 +291,7 @@
             "title": "Dialect NLP: Thinking outside the box when processing non-standard and low-resource languages(11/26 16:30)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209426",
-            "views": 291,
+            "views": 312,
             "date": "2025-11-17",
             "files": [],
             "images": [],
@@ -304,7 +306,7 @@
             "title": "[미래차부트캠프] 2025 겨울학기 현장실습 신청 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209402",
-            "views": 541,
+            "views": 562,
             "date": "2025-11-14",
             "files": [],
             "images": [
@@ -318,7 +320,7 @@
             "title": "[한국국제개발협력센터] 2025 개편 KOICA 프로젝트 봉사단 5기(르완다 중등학교 ICT 역량강화) 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209397",
-            "views": 455,
+            "views": 476,
             "date": "2025-11-14",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=209397&attachNo=179414",
@@ -341,7 +343,7 @@
             "title": "Advancing LLM’s capabilities to aggregate its own reasoning(10:00 - 11:00, Nov 18th, 2025)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209363",
-            "views": 342,
+            "views": 363,
             "date": "2025-11-14",
             "files": [],
             "images": [],
@@ -356,7 +358,7 @@
             "title": "[인턴십] 25-26년 동계 소프트웨어 인턴십 모집 안내 (~11/30(일))",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209244",
-            "views": 1629,
+            "views": 1682,
             "date": "2025-11-11",
             "files": [],
             "images": [],
@@ -372,7 +374,7 @@
             "title": "[AWS] Cloud School 13기 / AI School 2기 모집(~12/7)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209234",
-            "views": 510,
+            "views": 531,
             "date": "2025-11-11",
             "files": [],
             "images": [
@@ -389,7 +391,7 @@
             "title": "AI스타트업 - 업스테이지 CEO초청 『Tech for AX 콘서트』 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209198",
-            "views": 272,
+            "views": 293,
             "date": "2025-11-11",
             "files": [],
             "images": [
@@ -406,7 +408,7 @@
             "title": "[롯데건설] 롯데건설 신입사원 채용 인턴진형 (채용연계형)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209183",
-            "views": 374,
+            "views": 395,
             "date": "2025-11-10",
             "files": [],
             "images": [
@@ -420,7 +422,7 @@
             "title": "[졸업평가] 2025-2학기 연구논문작품 \"온라인\" 발표회 자료 제출 안내 (11/17월~11/20목)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209181",
-            "views": 2192,
+            "views": 2216,
             "date": "2025-11-10",
             "files": [],
             "images": [],
@@ -434,7 +436,7 @@
             "title": "2025학년도 2학기 학생성공 창의장학생 신청 안내(~11/17 오전 9시까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209170",
-            "views": 2081,
+            "views": 2125,
             "date": "2025-11-10",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=209170&attachNo=179125"
@@ -448,7 +450,7 @@
             "title": "On Modularity for Challenges posed by Constrained Generation from Language Models( 13:00 - 14:00, Nov 24th, 2025)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=209109",
-            "views": 228,
+            "views": 249,
             "date": "2025-11-10",
             "files": [],
             "images": [],
@@ -463,7 +465,7 @@
             "title": "현대오토에버 모빌리티 SW스쿨 3기 클래스메이트 모집 (~ 11/12)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208775",
-            "views": 748,
+            "views": 769,
             "date": "2025-11-04",
             "files": [],
             "images": [
@@ -477,7 +479,7 @@
             "title": "[SW학과] 소프트웨어학과 공청회 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208769",
-            "views": 1178,
+            "views": 1201,
             "date": "2025-11-04",
             "files": [],
             "images": [
@@ -494,7 +496,7 @@
             "title": "[삼성메디슨] 2025 하반기 3급 신입사원 채용 (~11.14)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208748",
-            "views": 547,
+            "views": 568,
             "date": "2025-11-04",
             "files": [],
             "images": [
@@ -508,7 +510,7 @@
             "title": "2025학년도 2학기 성적우수장학금 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208718",
-            "views": 877,
+            "views": 898,
             "date": "2025-11-03",
             "files": [],
             "images": [],
@@ -520,7 +522,7 @@
             "title": "2025년 동계 글로벌 챌린지 프로그램 참가 학생 모집(~11/16)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208704",
-            "views": 845,
+            "views": 862,
             "date": "2025-11-03",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=208704&attachNo=178531",
@@ -542,7 +544,7 @@
             "title": "[졸업평가] 연구논문작품 최종자료 반려 학생 \"재업로드\" 기간 안내 (11/3월~11/7금)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208673",
-            "views": 759,
+            "views": 776,
             "date": "2025-11-03",
             "files": [],
             "images": [],
@@ -554,7 +556,7 @@
             "title": "성균관 인공지능학회 SKKAI 2025 IBM Qiskit Fall Fest 행사 신청 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208645",
-            "views": 757,
+            "views": 774,
             "date": "2025-10-31",
             "files": [],
             "images": [
@@ -573,7 +575,7 @@
             "title": "라이드플럭스 겨울 방학 인턴 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208469",
-            "views": 1376,
+            "views": 1393,
             "date": "2025-10-28",
             "files": [],
             "images": [],
@@ -588,7 +590,7 @@
             "title": "Title: Context Synchronization for Collaborative and Personalized AI(10:30 - 11:30, Nov 19th, 2025)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208451",
-            "views": 748,
+            "views": 765,
             "date": "2025-10-28",
             "files": [],
             "images": [
@@ -605,7 +607,7 @@
             "title": "Nudging: Inference-time Alignment of LLMs via Guided Decoding(11/12 10:30~11:30, Online)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208431",
-            "views": 751,
+            "views": 768,
             "date": "2025-10-28",
             "files": [],
             "images": [],
@@ -620,7 +622,7 @@
             "title": "SBS D포럼 2025 (11/13목, 서울DDP)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208332",
-            "views": 827,
+            "views": 844,
             "date": "2025-10-24",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=208332&attachNo=178025"
@@ -636,7 +638,7 @@
             "title": "[IBK신용정보] 2026년 상반기 종합관리직 채용",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208327",
-            "views": 752,
+            "views": 769,
             "date": "2025-10-24",
             "files": [],
             "images": [
@@ -650,7 +652,7 @@
             "title": "[네이버페이] 2025년 네이버페이 하반기 신입채용 모집 (~11.2일까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208319",
-            "views": 1565,
+            "views": 1585,
             "date": "2025-10-24",
             "files": [],
             "images": [
@@ -669,7 +671,7 @@
             "title": "[삼성청년SW·AI아카데미] 청년 취업 경쟁력을 높여주는 SSAFY 15기 모집 (~11/10월까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208303",
-            "views": 991,
+            "views": 1008,
             "date": "2025-10-24",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=208303&attachNo=178008",
@@ -687,7 +689,7 @@
             "title": "Global AI Frontiers Symposium 2025 참여자 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208243",
-            "views": 948,
+            "views": 965,
             "date": "2025-10-23",
             "files": [],
             "images": [
@@ -704,7 +706,7 @@
             "title": "AI 시대, 개발자의 고민 - 인터뷰 참여자 모집 (10/27월 9시~12시, 85529호)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208194",
-            "views": 812,
+            "views": 829,
             "date": "2025-10-22",
             "files": [],
             "images": [],
@@ -719,7 +721,7 @@
             "title": "[74회] 글로벌 IT전문가와 킹고인의 만남 시즌2 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208171",
-            "views": 675,
+            "views": 692,
             "date": "2025-10-21",
             "files": [],
             "images": [
@@ -738,7 +740,7 @@
             "title": "[현대자동차그룹] 소프티어 부트캠프 7기 모집 홍보",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208065",
-            "views": 946,
+            "views": 963,
             "date": "2025-10-20",
             "files": [],
             "images": [
@@ -752,7 +754,7 @@
             "title": "[2025년 2학기_추가] SW중심대학사업 직무체험 프로그램 참여 학생 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208025",
-            "views": 2717,
+            "views": 2738,
             "date": "2025-10-20",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=208025&attachNo=177544",
@@ -772,7 +774,7 @@
             "title": "[KAIST] 2025년 KAIST 몰입캠프 겨울학기 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=208014",
-            "views": 1106,
+            "views": 1125,
             "date": "2025-10-20",
             "files": [],
             "images": [],
@@ -788,7 +790,7 @@
             "title": "[미래차부트캠프] 미래차 SDV, 전동화, 자율주행 마이크로디그리 신청 공지",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207998",
-            "views": 733,
+            "views": 750,
             "date": "2025-10-17",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207998&attachNo=177511",
@@ -809,7 +811,7 @@
             "title": "[CJ올리브네트웍스] Cloud Wave 7기 교육생 모집 (~11/23, 인턴연계)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207787",
-            "views": 930,
+            "views": 947,
             "date": "2025-10-14",
             "files": [],
             "images": [
@@ -830,7 +832,7 @@
             "title": "[공개SW특강] 대규모 멀티 모달 모델(LMM) 이해와 응용",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207742",
-            "views": 838,
+            "views": 858,
             "date": "2025-10-14",
             "files": [],
             "images": [
@@ -846,7 +848,7 @@
             "title": "대한유화㈜ 2025 대졸 신입/경력사원 공채",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207671",
-            "views": 703,
+            "views": 720,
             "date": "2025-10-13",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207671&attachNo=177069"
@@ -862,7 +864,7 @@
             "title": "2025-2학기 중간고사 부감독 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207646",
-            "views": 1303,
+            "views": 1320,
             "date": "2025-10-13",
             "files": [],
             "images": [],
@@ -876,7 +878,7 @@
             "title": "[졸업평가] 연구논문작품 최종자료 제출 안내 (10/13월~10/24금 23:59)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207560",
-            "views": 2883,
+            "views": 2900,
             "date": "2025-10-10",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207560&attachNo=176837",
@@ -896,7 +898,7 @@
             "title": "[졸업평가] 연구논문 외부학회 발표 증빙서류 제출 관련 안내 (*논문만 해당)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207559",
-            "views": 611,
+            "views": 632,
             "date": "2025-10-10",
             "files": [],
             "images": [],
@@ -908,7 +910,7 @@
             "title": "[SK텔레콤] 2025 SK Telecom Junior Talent 채용 (~오늘까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207557",
-            "views": 899,
+            "views": 916,
             "date": "2025-10-10",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207557&attachNo=176834"
@@ -928,7 +930,7 @@
             "title": "(주)이마트 신입사원 모집 (~13일 마감)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207543",
-            "views": 694,
+            "views": 711,
             "date": "2025-10-10",
             "files": [],
             "images": [
@@ -942,7 +944,7 @@
             "title": "소프트웨어 직무체험 사전 설명회 모집 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207541",
-            "views": 670,
+            "views": 684,
             "date": "2025-10-10",
             "files": [],
             "images": [],
@@ -956,7 +958,7 @@
             "title": "[SW학과] 중간고사 파이팅 간식 푸드트럭 이벤트",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207478",
-            "views": 1227,
+            "views": 1241,
             "date": "2025-10-02",
             "files": [],
             "images": [
@@ -972,7 +974,7 @@
             "title": "[졸업평가] 연구논문작품 제안서 및 중간보고서 반려 학생 \"재업로드\" 기간 안내 (10/6월~10/10금)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207477",
-            "views": 1080,
+            "views": 1094,
             "date": "2025-10-02",
             "files": [],
             "images": [],
@@ -986,7 +988,7 @@
             "title": "추석 연휴로 인한 학과사무실 단축 운영 안내(10/2(목))",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207429",
-            "views": 714,
+            "views": 728,
             "date": "2025-10-01",
             "files": [],
             "images": [],
@@ -998,7 +1000,7 @@
             "title": "[OST2025] 오프소스 테크데이 2025",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207335",
-            "views": 1080,
+            "views": 1094,
             "date": "2025-10-01",
             "files": [],
             "images": [
@@ -1012,7 +1014,7 @@
             "title": "2025 하반기 SK AX AI x Japan 채용연계형 인턴십",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207333",
-            "views": 1316,
+            "views": 1330,
             "date": "2025-10-01",
             "files": [],
             "images": [
@@ -1026,7 +1028,7 @@
             "title": "[LG전자 세미나] 모빌리티 시스템 접근제어 보안 기술 개발 및 이슈",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207278",
-            "views": 819,
+            "views": 833,
             "date": "2025-09-30",
             "files": [],
             "images": [],
@@ -1038,7 +1040,7 @@
             "title": "Toward Adaptive AI Models: Continual Learning and Machine Unlearning in Practice(10:00 - 11:00, Oct 14th, 2025)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207268",
-            "views": 895,
+            "views": 909,
             "date": "2025-09-30",
             "files": [],
             "images": [],
@@ -1053,7 +1055,7 @@
             "title": "LG유플러스 2025 신입사원 채용 (~10/12 23:00)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207257",
-            "views": 1078,
+            "views": 1092,
             "date": "2025-09-30",
             "files": [],
             "images": [
@@ -1067,7 +1069,7 @@
             "title": "2025년 사임당장학회 장학금 신청 (~10/9목까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207249",
-            "views": 1121,
+            "views": 1135,
             "date": "2025-09-29",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207249&attachNo=176462"
@@ -1081,7 +1083,7 @@
             "title": "2025 원익그룹 신입사원 공개채용",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207191",
-            "views": 958,
+            "views": 972,
             "date": "2025-09-26",
             "files": [],
             "images": [
@@ -1095,7 +1097,7 @@
             "title": "[현대캐피탈] 2025 신입사원 채용 | ~10/13(월) 23:59",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207142",
-            "views": 983,
+            "views": 997,
             "date": "2025-09-26",
             "files": [],
             "images": [
@@ -1109,7 +1111,7 @@
             "title": "[토스] Ads ML Engineer 신입 집중채용(~10/12)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207141",
-            "views": 1218,
+            "views": 1232,
             "date": "2025-09-26",
             "files": [],
             "images": [
@@ -1123,7 +1125,7 @@
             "title": "2025년 산학협력프로젝트 유형2 심화 AI R&D 하반기 선발자 명단 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207075",
-            "views": 3000,
+            "views": 3014,
             "date": "2025-09-24",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207075&attachNo=176161"
@@ -1137,7 +1139,7 @@
             "title": "2025 하반기 KB손해보험 4급 신입사원 공개채용",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207022",
-            "views": 1289,
+            "views": 1303,
             "date": "2025-09-23",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207022&attachNo=176037"
@@ -1153,7 +1155,7 @@
             "title": "2025 한솔그룹 신입사원 공개채용 (~10/10)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207008",
-            "views": 1293,
+            "views": 1307,
             "date": "2025-09-23",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207008&attachNo=176013"
@@ -1171,7 +1173,7 @@
             "title": "[NH농협손해보험] 2025 하반기 신규직원 채용 (~9/29)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=207007",
-            "views": 1323,
+            "views": 1337,
             "date": "2025-09-23",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=207007&attachNo=176011"
@@ -1187,7 +1189,7 @@
             "title": "[73회] 글로벌 IT전문가와 킹고인의 만남 시즌2 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206799",
-            "views": 1424,
+            "views": 1438,
             "date": "2025-09-19",
             "files": [],
             "images": [
@@ -1206,7 +1208,7 @@
             "title": "[2025년 2학기] SW중심대학사업 직무 체험 프로그램 참여 학생 모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206660",
-            "views": 3924,
+            "views": 3938,
             "date": "2025-09-17",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206660&attachNo=175598",
@@ -1226,7 +1228,7 @@
             "title": "[인턴십] 2025년 2학기 소프트웨어 인턴십 추가 모집 안내 (~ 9/23(화))",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206657",
-            "views": 5566,
+            "views": 5583,
             "date": "2025-09-17",
             "files": [],
             "images": [],
@@ -1242,7 +1244,7 @@
             "title": "[성균SW멘토링] 2025년 결과발표회 일정 공지 및 서류 제출 안내(~9/29월 13시까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206649",
-            "views": 1842,
+            "views": 1856,
             "date": "2025-09-17",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206649&attachNo=175586"
@@ -1256,7 +1258,7 @@
             "title": "[슈어소프트테크] 신입사원 공개 채용 (~10/19)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206568",
-            "views": 1415,
+            "views": 1429,
             "date": "2025-09-16",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206568&attachNo=175484"
@@ -1272,7 +1274,7 @@
             "title": "[우아한형제들] 2026 우아한형제들 우아한테크코스 8기 모집 + 온라인 설명회 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206523",
-            "views": 1949,
+            "views": 1963,
             "date": "2025-09-16",
             "files": [],
             "images": [
@@ -1286,7 +1288,7 @@
             "title": "[피우다프로젝트] 2025년 제15회 SW개발 공모전(사회적 임팩트조직의 활동을 돕는 IT솔루션) 참가자 모집(~9.29.(월))",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206468",
-            "views": 1144,
+            "views": 1158,
             "date": "2025-09-15",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206468&attachNo=175390"
@@ -1324,7 +1326,7 @@
             "title": "[한화에어로스페이스] 2025년 하반기 신입사원 채용 (~10.13(월))",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206467",
-            "views": 2468,
+            "views": 2482,
             "date": "2025-09-15",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206467&attachNo=175389"
@@ -1340,7 +1342,7 @@
             "title": "2025년 하반기 한화솔루션 신입 채용(케미칼 부문 / 큐셀 부문) (~10/10금 15시)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206466",
-            "views": 1472,
+            "views": 1486,
             "date": "2025-09-15",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206466&attachNo=175388"
@@ -1358,7 +1360,7 @@
             "title": "[RIST] 2025년 하반기 포항산업연구원(RIST) 공개채용",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206464",
-            "views": 1282,
+            "views": 1296,
             "date": "2025-09-15",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206464&attachNo=175386",
@@ -1380,7 +1382,7 @@
             "title": "[추가모집] 2025년 산학협력프로젝트 유형2 심화 AI R&D 하반기 참여 신청 공고",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206451",
-            "views": 3951,
+            "views": 3965,
             "date": "2025-09-15",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206451&attachNo=175381"
@@ -1397,7 +1399,7 @@
             "title": "[공개SW특강] 데이터 로그 저장 및 수집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206422",
-            "views": 1540,
+            "views": 1554,
             "date": "2025-09-15",
             "files": [],
             "images": [
@@ -1414,7 +1416,7 @@
             "title": "[ASML Korea] 2025 하반기 ASML Korea 신입 채용 모집 + 채용설명회 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206345",
-            "views": 2010,
+            "views": 2024,
             "date": "2025-09-12",
             "files": [],
             "images": [
@@ -1442,7 +1444,7 @@
             "title": "[kt cloud] 2025년 9월 신입사원 공개채용 (~9/24수 17:00까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206344",
-            "views": 2443,
+            "views": 2457,
             "date": "2025-09-12",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206344&attachNo=175254"
@@ -1460,7 +1462,7 @@
             "title": "[KB증권] 2025 KB증권 4급 신입직원 공개채용 (~9/25)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206328",
-            "views": 1556,
+            "views": 1570,
             "date": "2025-09-11",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206328&attachNo=175235"
@@ -1476,7 +1478,7 @@
             "title": "[졸업평가] 2025학년도 2학기 연구논문작품 경비 지원 관련 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206327",
-            "views": 1434,
+            "views": 1448,
             "date": "2025-09-11",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206327&attachNo=175234"
@@ -1490,7 +1492,7 @@
             "title": "2025-2학기 대학원 한마당 소프트웨어학과 대학원 진학설명회(9/24(수) 14시) 및 오픈랩 안내 (9/22(월)~9/29(월))",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206300",
-            "views": 1723,
+            "views": 1737,
             "date": "2025-09-11",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206300&attachNo=175205",
@@ -1517,7 +1519,7 @@
             "title": "2025 한화그룹 기계/서비스 부문 핵심인재 채용 (~9/17)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206286",
-            "views": 1259,
+            "views": 1273,
             "date": "2025-09-11",
             "files": [],
             "images": [
@@ -1531,7 +1533,7 @@
             "title": "[현대모비스] 25년 하반기 신입 채용 (~9/22(월) 10:00)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206283",
-            "views": 1372,
+            "views": 1386,
             "date": "2025-09-11",
             "files": [],
             "images": [
@@ -1545,7 +1547,7 @@
             "title": "Trustworthy and Continually Adaptable Multimodal Agents(16:30 - 17:30, Oct 1st, 2025)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206199",
-            "views": 1177,
+            "views": 1191,
             "date": "2025-09-10",
             "files": [],
             "images": [],
@@ -1560,7 +1562,7 @@
             "title": "[현대건설/신입채용] 2025년 9월 현대건설 신입사원 채용 (지원서 접수: ~9/29월)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206180",
-            "views": 1328,
+            "views": 1343,
             "date": "2025-09-09",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206180&attachNo=175096"
@@ -1576,7 +1578,7 @@
             "title": "2025 대학생 프로그래밍 경시대회 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206118",
-            "views": 1667,
+            "views": 1682,
             "date": "2025-09-09",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206118&attachNo=175033",
@@ -1595,7 +1597,7 @@
             "title": "[카카오그룹] 2026년 신입크루 공채(~9/28(일)까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206097",
-            "views": 1663,
+            "views": 1678,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1609,7 +1611,7 @@
             "title": "[인공지능학과] 2026년 인공지능학과 진학설명회",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206092",
-            "views": 1479,
+            "views": 1494,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1623,7 +1625,7 @@
             "title": "2025년 산학협력프로젝트 유형2 심화 AI R&D 하반기 참여 신청 공고",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206091",
-            "views": 4946,
+            "views": 4961,
             "date": "2025-09-08",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=206091&attachNo=175118"
@@ -1640,7 +1642,7 @@
             "title": "[라이나생명] 2025년 신입 공개 채용 (~9/19)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206054",
-            "views": 1497,
+            "views": 1512,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1654,7 +1656,7 @@
             "title": "[LGCNS] 2025 하반기 신입사원 채용 (~9/18(목)까지)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206013",
-            "views": 1570,
+            "views": 1585,
             "date": "2025-09-05",
             "files": [],
             "images": [
@@ -1668,7 +1670,7 @@
             "title": "알고리즘개론 41분반 수강제한인원 추가 변경 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206010",
-            "views": 978,
+            "views": 993,
             "date": "2025-09-05",
             "files": [],
             "images": [],
@@ -1680,7 +1682,7 @@
             "title": "2025년 제25회 TOPCIT 정기평가 (~9/22 월)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=206007",
-            "views": 1372,
+            "views": 1387,
             "date": "2025-09-05",
             "files": [],
             "images": [
@@ -1697,7 +1699,7 @@
             "title": "자료구조개론 41분반 수강제한인원 변경 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205968",
-            "views": 877,
+            "views": 892,
             "date": "2025-09-05",
             "files": [],
             "images": [],
@@ -1709,7 +1711,7 @@
             "title": "2025년 제3회 START業 FORUM",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205965",
-            "views": 1584,
+            "views": 1599,
             "date": "2025-09-05",
             "files": [],
             "images": [],
@@ -1725,7 +1727,7 @@
             "title": "SPARK 16기 참가모집",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205964",
-            "views": 1792,
+            "views": 1807,
             "date": "2025-09-05",
             "files": [],
             "images": [
@@ -1744,7 +1746,7 @@
             "title": "[하나은행] K-Digital Training \"디지털하나로\" 모집 (~9/14(일)) 18시까지",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205959",
-            "views": 1339,
+            "views": 1354,
             "date": "2025-09-05",
             "files": [],
             "images": [
@@ -1758,7 +1760,7 @@
             "title": "신뢰할 수 있는 AI 경진대회",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205957",
-            "views": 1442,
+            "views": 1457,
             "date": "2025-09-05",
             "files": [],
             "images": [
@@ -1772,7 +1774,7 @@
             "title": "알고리즘개론 41분반 수강제한인원 변경 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205926",
-            "views": 1050,
+            "views": 1065,
             "date": "2025-09-04",
             "files": [],
             "images": [],
@@ -1784,7 +1786,7 @@
             "title": "2025 대학생 프로그래밍 경시대회 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205910",
-            "views": 1862,
+            "views": 1877,
             "date": "2025-09-04",
             "files": [],
             "images": [
@@ -1800,7 +1802,7 @@
             "title": "[ 토스 ] 해커톤 (NEXT ML CHALLENGE)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205902",
-            "views": 1589,
+            "views": 1604,
             "date": "2025-09-04",
             "files": [],
             "images": [],
@@ -1815,7 +1817,7 @@
             "title": "[롯데그룹] 3·6·9·12 예측가능한 롯데그룹 채용 9월 오픈(9/3~)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205883",
-            "views": 1218,
+            "views": 1233,
             "date": "2025-09-04",
             "files": [],
             "images": [
@@ -1829,7 +1831,7 @@
             "title": "인공지능 페스타(AI Festa 2025)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205882",
-            "views": 1286,
+            "views": 1301,
             "date": "2025-09-04",
             "files": [],
             "images": [],
@@ -1844,7 +1846,7 @@
             "title": "[리디 주식회사] 전문연구요원 Junior Software Engineer",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205881",
-            "views": 1258,
+            "views": 1273,
             "date": "2025-09-04",
             "files": [],
             "images": [],
@@ -1859,7 +1861,7 @@
             "title": "제17회 전자신문 대학(원)생 ICT 논문 공모 대제전 참가 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205780",
-            "views": 1400,
+            "views": 1415,
             "date": "2025-09-02",
             "files": [],
             "images": [
@@ -1875,7 +1877,7 @@
             "title": "[HL그룹] 2025 하반기 HL그룹 신입사원 채용 (~9/21)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205779",
-            "views": 1333,
+            "views": 1348,
             "date": "2025-09-02",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=205779&attachNo=174524"
@@ -1891,7 +1893,7 @@
             "title": "2025 넥슨컴퍼니 채용형 인턴십 <넥토리얼> (~9/15, 5PM)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205777",
-            "views": 1468,
+            "views": 1486,
             "date": "2025-09-02",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=205777&attachNo=174521"
@@ -1907,7 +1909,7 @@
             "title": "[졸업평가] 연구논문작품 신청서 제출 방법 안내 (*대상자만 / 9.22월~9.26금)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205736",
-            "views": 5309,
+            "views": 5324,
             "date": "2025-09-02",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=205736&attachNo=174446"
@@ -1925,7 +1927,7 @@
             "title": "2025 한화그룹 기계/서비스 부문 핵심인재 채용  (9/1~9/17)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205735",
-            "views": 1334,
+            "views": 1349,
             "date": "2025-09-02",
             "files": [],
             "images": [
@@ -1939,7 +1941,7 @@
             "title": "[학생인재개발팀/대학일자리플러스센터] 2025학년도 2학기 진로·취업지원 프로그램 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205734",
-            "views": 1376,
+            "views": 1391,
             "date": "2025-09-02",
             "files": [],
             "images": [
@@ -1953,7 +1955,7 @@
             "title": "[졸업평가] 연구논문작품 서약서, 제안서 및 중간보고서 제출 안내 (*대상자만 / 9.15월~9.26금)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205729",
-            "views": 5952,
+            "views": 5967,
             "date": "2025-09-02",
             "files": [
                 "https://cse.skku.edu/cse/notice.do?mode=download&articleNo=205729&attachNo=174438",
@@ -1972,7 +1974,7 @@
             "title": "[미래차부트캠프] 2025 하반기 현대모비스 미래모빌리티 채용연계 트랙 장학생 모집 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205724",
-            "views": 1670,
+            "views": 1685,
             "date": "2025-09-02",
             "files": [],
             "images": [
@@ -1989,7 +1991,7 @@
             "title": "2025-2 소프트웨어전공탐색 직권배정 신청",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205702",
-            "views": 1311,
+            "views": 1326,
             "date": "2025-09-01",
             "files": [],
             "images": [],
@@ -2003,7 +2005,7 @@
             "title": "[금호석유화학그룹] 2025년 하반기 신입사원 공개채용 (~9/12)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205651",
-            "views": 1217,
+            "views": 1232,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -2017,7 +2019,7 @@
             "title": "FY2025 한국투자증권 일반 공채(신입사원 5급) (~10/1)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205610",
-            "views": 1313,
+            "views": 1330,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -2031,7 +2033,7 @@
             "title": "[LIG넥스원] 2025년 하반기 LIG넥스원 인재영입(~9/15)",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205609",
-            "views": 1294,
+            "views": 1311,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -2045,7 +2047,7 @@
             "title": "2025년 하반기 (주)두산 사업부문 신입사원·채용연계형 인턴·산학장학생 채용",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205608",
-            "views": 1372,
+            "views": 1389,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -2059,7 +2061,7 @@
             "title": "[한화시스템 방산부문] 2025년 하반기 학/석사 신입사원 채용 (~09.17(수))",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205520",
-            "views": 1368,
+            "views": 1385,
             "date": "2025-08-29",
             "files": [],
             "images": [
@@ -2073,7 +2075,7 @@
             "title": "2025학년도 2학기 스마트카공학개론(ICE3043) 과목 수강 신청 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205485",
-            "views": 821,
+            "views": 838,
             "date": "2025-08-29",
             "files": [],
             "images": [],
@@ -2085,7 +2087,7 @@
             "title": "[삼성전자 DS부문] 2025년 하반기 신입 채용 상담회/설명회 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205475",
-            "views": 1464,
+            "views": 1481,
             "date": "2025-08-29",
             "files": [],
             "images": [
@@ -2104,7 +2106,7 @@
             "title": "[삼성전자 DS부문] 2025년 하반기 신입 채용 안내",
             "department": "소프트웨어학과",
             "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=205473",
-            "views": 1552,
+            "views": 1572,
             "date": "2025-08-29",
             "files": [],
             "images": [

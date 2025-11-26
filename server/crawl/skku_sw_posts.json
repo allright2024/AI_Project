@@ -1,12 +1,13 @@
 {
-    "last_updated": "2025-11-26 17:52:30",
+    "last_updated": "2025-11-26 20:56:58",
+    "pinned_posts": [],
     "posts": [
         {
             "category": "채용/모집",
             "title": "[PFCT] AI 신용평가 아카데미 3기 모집 (신청기한 ~11/30)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209948",
-            "views": 115,
+            "views": 188,
             "date": "2025-11-25",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209948&attachNo=180379",
@@ -24,7 +25,7 @@
             "title": "2026 소프트웨어 산업전망 컨퍼런스 개최 안내 (12/2화)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209947",
-            "views": 81,
+            "views": 154,
             "date": "2025-11-25",
             "files": [],
             "images": [
@@ -43,7 +44,7 @@
             "title": "토스 25년도 2학기 Frontend Platform Assistant 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209785",
-            "views": 492,
+            "views": 554,
             "date": "2025-11-21",
             "files": [],
             "images": [
@@ -60,7 +61,7 @@
             "title": "2025학년도 동계 학부생 연구학점제[URP 1형] 시행안내(신청기간 11/26~12/3) (신청 관련 추가 안내)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209734",
-            "views": 336,
+            "views": 395,
             "date": "2025-11-20",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209734&attachNo=180137",
@@ -76,7 +77,7 @@
             "title": "[SW중심대학사업단] 글로벌 IT전문가와 킹고인의 만남 시즌2 일흔다섯 번째 만남(11/29, 수, 12시)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209725",
-            "views": 268,
+            "views": 318,
             "date": "2025-11-20",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209725&attachNo=180117"
@@ -97,7 +98,7 @@
             "title": "SSA(SungKyun Software Assistant) 인력 모집 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209688",
-            "views": 436,
+            "views": 481,
             "date": "2025-11-20",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209688&attachNo=179882",
@@ -112,7 +113,7 @@
             "title": "2025년 제4회 START業 FORUM",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209493",
-            "views": 511,
+            "views": 549,
             "date": "2025-11-17",
             "files": [],
             "images": [
@@ -132,7 +133,7 @@
             "title": "2025 SKKU 동계 PharmXplore Scholars 선발 안내 (지원기간: 11/03~11/21)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209478",
-            "views": 637,
+            "views": 672,
             "date": "2025-11-17",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209478&attachNo=179553"
@@ -148,7 +149,7 @@
             "title": "Dialect NLP: Thinking outside the box when processing non-standard and low-resource languages(11/26 16:30)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209446",
-            "views": 388,
+            "views": 426,
             "date": "2025-11-17",
             "files": [],
             "images": [],
@@ -163,7 +164,7 @@
             "title": "[한국국제개발협력센터] 2025 개편 KOICA 프로젝트 봉사단 5기(르완다 중등학교 ICT 역량강화) 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209444",
-            "views": 411,
+            "views": 448,
             "date": "2025-11-17",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209444&attachNo=179447",
@@ -191,7 +192,7 @@
             "title": "Advancing LLM’s capabilities to aggregate its own reasoning(10:00 - 11:00, Nov 18th, 2025)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209442",
-            "views": 312,
+            "views": 343,
             "date": "2025-11-17",
             "files": [],
             "images": [],
@@ -206,7 +207,7 @@
             "title": "국방과학연구소 2026년 상반기 채용상담 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209384",
-            "views": 455,
+            "views": 487,
             "date": "2025-11-14",
             "files": [],
             "images": [],
@@ -223,7 +224,7 @@
             "title": "GDGoC 대학 연합 해커톤 RE:ALThon",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209255",
-            "views": 587,
+            "views": 619,
             "date": "2025-11-11",
             "files": [],
             "images": [
@@ -239,7 +240,7 @@
             "title": "[인턴십] 25-26년 동계 소프트웨어 인턴십 모집 안내 (~11/30(일)) 연장모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209226",
-            "views": 871,
+            "views": 903,
             "date": "2025-11-11",
             "files": [],
             "images": [],
@@ -255,7 +256,7 @@
             "title": "Nudging: Inference-time Alignment of LLMs via Guided Decoding(11/12 10:30-11:30, Online)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209147",
-            "views": 587,
+            "views": 618,
             "date": "2025-11-10",
             "files": [],
             "images": [],
@@ -270,7 +271,7 @@
             "title": "On Modularity for Challenges posed by Constrained Generation from Language Models( 13:00 - 14:00, Nov 24th, 2025)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209141",
-            "views": 326,
+            "views": 356,
             "date": "2025-11-10",
             "files": [],
             "images": [],
@@ -285,7 +286,7 @@
             "title": "AI스타트업 - 업스테이지 CEO초청 『Tech for AX 콘서트』 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209136",
-            "views": 398,
+            "views": 429,
             "date": "2025-11-10",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209136&attachNo=179080"
@@ -303,7 +304,7 @@
             "title": "2025학년도 2학기 정용지 창의장학생 신청 안내(11.18.(화) 17:00 메일 제출자 限)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=209132",
-            "views": 894,
+            "views": 923,
             "date": "2025-11-10",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=209132&attachNo=179074"
@@ -317,7 +318,7 @@
             "title": "현대오토에버 모빌리티 SW스쿨 3기 클래스메이트 모집 (~ 11/12)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208818",
-            "views": 707,
+            "views": 741,
             "date": "2025-11-05",
             "files": [],
             "images": [
@@ -331,7 +332,7 @@
             "title": "[SW학과] 소프트웨어학과 공청회 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208817",
-            "views": 657,
+            "views": 690,
             "date": "2025-11-05",
             "files": [],
             "images": [
@@ -348,7 +349,7 @@
             "title": "[삼성메디슨] 2025 하반기 3급 신입사원 채용 (~11.14)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208816",
-            "views": 495,
+            "views": 526,
             "date": "2025-11-05",
             "files": [],
             "images": [
@@ -362,7 +363,7 @@
             "title": "2025년 동계 글로벌 챌린지 프로그램 참가 학생 모집(~11/16)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208702",
-            "views": 1553,
+            "views": 1594,
             "date": "2025-11-03",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=208702&attachNo=178528",
@@ -384,7 +385,7 @@
             "title": "성균관 인공지능학회 SKKAI 2025 IBM Qiskit Fall Fest 행사 신청 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208644",
-            "views": 706,
+            "views": 737,
             "date": "2025-10-31",
             "files": [],
             "images": [
@@ -403,7 +404,7 @@
             "title": "2025학년도 2학기 성적우수장학금 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208641",
-            "views": 938,
+            "views": 972,
             "date": "2025-10-31",
             "files": [],
             "images": [],
@@ -415,7 +416,7 @@
             "title": "한국공학한림원 YEHS (Young Engineers Honor Society) 신입회원 모집 및 제 282회 NAEK Forum 참가 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208553",
-            "views": 689,
+            "views": 717,
             "date": "2025-10-30",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=208553&attachNo=178250",
@@ -437,7 +438,7 @@
             "title": "라이드플럭스 겨울 방학 인턴 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208526",
-            "views": 748,
+            "views": 775,
             "date": "2025-10-29",
             "files": [],
             "images": [],
@@ -452,7 +453,7 @@
             "title": "Title: Context Synchronization for Collaborative and Personalized AI(10:30 - 11:30, Nov 19th, 2025)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208525",
-            "views": 508,
+            "views": 536,
             "date": "2025-10-29",
             "files": [],
             "images": [
@@ -469,7 +470,7 @@
             "title": "Nudging: Inference-time Alignment of LLMs via Guided Decoding(11/12 10:30~11:30, Online)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208524",
-            "views": 637,
+            "views": 664,
             "date": "2025-10-29",
             "files": [],
             "images": [],
@@ -484,7 +485,7 @@
             "title": "SBS D포럼 2025 (11/13목, 서울DDP)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208349",
-            "views": 631,
+            "views": 662,
             "date": "2025-10-27",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=208349&attachNo=178048"
@@ -500,7 +501,7 @@
             "title": "[IBK신용정보] 2026년 상반기 종합관리직 채용",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208348",
-            "views": 494,
+            "views": 523,
             "date": "2025-10-27",
             "files": [],
             "images": [
@@ -514,7 +515,7 @@
             "title": "[네이버페이] 2025년 네이버페이 하반기 신입채용 모집 (~11.2일까지)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208346",
-            "views": 565,
+            "views": 592,
             "date": "2025-10-27",
             "files": [],
             "images": [
@@ -532,7 +533,7 @@
             "title": "[삼성청년SW·AI아카데미] 청년 취업 경쟁력을 높여주는 SSAFY 15기 모집 (~11/10월까지)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208345",
-            "views": 564,
+            "views": 598,
             "date": "2025-10-27",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=208345&attachNo=178045",
@@ -550,7 +551,7 @@
             "title": "AI 시대, 개발자의 고민 - 인터뷰 참여자 모집 (10/27월 9시, 85529호)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208199",
-            "views": 596,
+            "views": 629,
             "date": "2025-10-22",
             "files": [],
             "images": [],
@@ -565,7 +566,7 @@
             "title": "Global AI Frontiers Symposium 2025 참여자 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208198",
-            "views": 691,
+            "views": 719,
             "date": "2025-10-22",
             "files": [],
             "images": [
@@ -582,7 +583,7 @@
             "title": "[SW중심대학사업단] 글로벌 IT전문가와 킹고인의 만남 시즌2 일흔네 번째 만남(10/29, 수, 12시)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208169",
-            "views": 555,
+            "views": 584,
             "date": "2025-10-21",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=208169&attachNo=177729"
@@ -603,7 +604,7 @@
             "title": "[현대자동차그룹] 소프티어 부트캠프 7기 모집 홍보",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208071",
-            "views": 615,
+            "views": 642,
             "date": "2025-10-20",
             "files": [],
             "images": [
@@ -617,7 +618,7 @@
             "title": "[KAIST] 2025년 KAIST 몰입캠프 겨울학기 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208040",
-            "views": 738,
+            "views": 767,
             "date": "2025-10-20",
             "files": [],
             "images": [],
@@ -633,7 +634,7 @@
             "title": "[미래차부트캠프] 미래차 SDV, 전동화, 자율주행 마이크로디그리 신청 공지",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208038",
-            "views": 454,
+            "views": 483,
             "date": "2025-10-20",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=208038&attachNo=177559",
@@ -654,7 +655,7 @@
             "title": "[2025년 2학기_추가] SW중심대학사업 직무체험 프로그램 참여 학생 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=208023",
-            "views": 560,
+            "views": 593,
             "date": "2025-10-20",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=208023&attachNo=177542",
@@ -674,7 +675,7 @@
             "title": "[학생지원팀] 학생 해외 범죄 예방 및 안전관리 강화 촉구",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207981",
-            "views": 567,
+            "views": 603,
             "date": "2025-10-17",
             "files": [],
             "images": [],
@@ -688,7 +689,7 @@
             "title": "[한국장학재단] 2025학년도 2학기 한국장학재단 국가근로장학금 추가 신청 안내(25.10.30(목)~ 11.07(금))",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207952",
-            "views": 560,
+            "views": 590,
             "date": "2025-10-17",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=207952&attachNo=177451"
@@ -704,7 +705,7 @@
             "title": "[CJ올리브네트웍스] Cloud Wave 7기 교육생 모집 (~11/23, 인턴연계)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207810",
-            "views": 712,
+            "views": 743,
             "date": "2025-10-15",
             "files": [],
             "images": [
@@ -728,7 +729,7 @@
             "title": "대한유화㈜ 2025 대졸 신입/경력사원 공채",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207808",
-            "views": 558,
+            "views": 587,
             "date": "2025-10-15",
             "files": [],
             "images": [
@@ -742,7 +743,7 @@
             "title": "[공개SW특강] 대규모 멀티 모달 모델(LMM) 이해와 응용",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207734",
-            "views": 942,
+            "views": 969,
             "date": "2025-10-14",
             "files": [],
             "images": [
@@ -758,7 +759,7 @@
             "title": "[SK텔레콤] 2025 SK Telecom Junior Talent 채용 (~10/10까지)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207575",
-            "views": 908,
+            "views": 933,
             "date": "2025-10-10",
             "files": [],
             "images": [
@@ -775,7 +776,7 @@
             "title": "(주)이마트 신입사원 모집 (~13일 마감)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207574",
-            "views": 602,
+            "views": 627,
             "date": "2025-10-10",
             "files": [],
             "images": [
@@ -789,7 +790,7 @@
             "title": "[SW학과] 중간고사 파이팅 간식 푸드트럭 이벤트",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207573",
-            "views": 726,
+            "views": 753,
             "date": "2025-10-10",
             "files": [],
             "images": [
@@ -806,7 +807,7 @@
             "title": "소프트웨어 직무체험 사전 설명회 모집 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207542",
-            "views": 618,
+            "views": 646,
             "date": "2025-10-10",
             "files": [],
             "images": [],
@@ -820,7 +821,7 @@
             "title": "[OST2025] 오프소스 테크데이 2025",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207355",
-            "views": 820,
+            "views": 852,
             "date": "2025-10-01",
             "files": [],
             "images": [
@@ -834,7 +835,7 @@
             "title": "2025 하반기 SK AX AI x Japan 채용연계형 인턴십",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207354",
-            "views": 1037,
+            "views": 1069,
             "date": "2025-10-01",
             "files": [],
             "images": [
@@ -848,7 +849,7 @@
             "title": "[LG전자 세미나] 모빌리티 시스템 접근제어 보안 기술 개발 및 이슈",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207353",
-            "views": 652,
+            "views": 684,
             "date": "2025-10-01",
             "files": [],
             "images": [],
@@ -860,7 +861,7 @@
             "title": "Toward Adaptive AI Models: Continual Learning and Machine Unlearning in Practice(10:00 - 11:00, Oct 14th, 2025)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207352",
-            "views": 657,
+            "views": 687,
             "date": "2025-10-01",
             "files": [],
             "images": [],
@@ -875,7 +876,7 @@
             "title": "2025년 사임당장학회 장학금 신청 (~10/9목까지)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207351",
-            "views": 723,
+            "views": 748,
             "date": "2025-10-01",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=207351&attachNo=176600"
@@ -889,7 +890,7 @@
             "title": "2025 원익그룹 신입사원 공개채용",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207349",
-            "views": 630,
+            "views": 655,
             "date": "2025-10-01",
             "files": [],
             "images": [
@@ -903,7 +904,7 @@
             "title": "[현대캐피탈] 2025 신입사원 채용 | ~10/13(월) 23:59",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207347",
-            "views": 615,
+            "views": 640,
             "date": "2025-10-01",
             "files": [],
             "images": [
@@ -917,7 +918,7 @@
             "title": "[토스] Ads ML Engineer 신입 집중채용(~10/12)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207345",
-            "views": 658,
+            "views": 683,
             "date": "2025-10-01",
             "files": [],
             "images": [
@@ -931,7 +932,7 @@
             "title": "2025 한솔그룹 신입사원 공개채용 (~10/10)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=207344",
-            "views": 458,
+            "views": 485,
             "date": "2025-10-01",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=207344&attachNo=176581"
@@ -950,7 +951,7 @@
             "title": "글로벌융합학부-컴퓨터교육과 연합 AI 해커톤 참가팀 모집(~10/9(목))",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206905",
-            "views": 898,
+            "views": 926,
             "date": "2025-09-22",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206905&attachNo=175923"
@@ -966,7 +967,7 @@
             "title": "[SW중심대학사업단] 글로벌 IT전문가와 킹고인의 만남 시즌2 일흔세 번째 만남(9/24, 수, 12시)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206796",
-            "views": 725,
+            "views": 757,
             "date": "2025-09-19",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206796&attachNo=175796"
@@ -987,7 +988,7 @@
             "title": "[2025년 2학기] SW중심대학사업 직무 체험 프로그램 참여 학생 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206659",
-            "views": 1134,
+            "views": 1165,
             "date": "2025-09-17",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206659&attachNo=175596",
@@ -1007,7 +1008,7 @@
             "title": "[인턴십] 2025년 2학기 소프트웨어 인턴십 추가 모집 안내 (~ 9/23(화))",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206654",
-            "views": 1058,
+            "views": 1088,
             "date": "2025-09-17",
             "files": [],
             "images": [],
@@ -1023,7 +1024,7 @@
             "title": "[슈어소프트테크] 신입사원 공개 채용 (~10/19)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206616",
-            "views": 715,
+            "views": 745,
             "date": "2025-09-17",
             "files": [],
             "images": [
@@ -1037,7 +1038,7 @@
             "title": "[피우다프로젝트] 2025년 제15회 SW개발 공모전(사회적 임팩트조직의 활동을 돕는 IT솔루션) 참가자 모집(~9.29.(월))",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206615",
-            "views": 715,
+            "views": 740,
             "date": "2025-09-17",
             "files": [],
             "images": [
@@ -1073,7 +1074,7 @@
             "title": "2025년 하반기 한화솔루션 신입 채용(케미칼 부문 / 큐셀 부문) (~10/10금 15시)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206614",
-            "views": 767,
+            "views": 797,
             "date": "2025-09-17",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206614&attachNo=175550"
@@ -1092,7 +1093,7 @@
             "title": "[추가모집] 2025년 산학협력프로젝트 유형2 하반기 참여 신청 공고",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206612",
-            "views": 792,
+            "views": 820,
             "date": "2025-09-17",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206612&attachNo=175549"
@@ -1109,7 +1110,7 @@
             "title": "[ASML Korea] 2025 하반기 ASML Korea 신입 채용 모집 + 채용설명회 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206434",
-            "views": 792,
+            "views": 820,
             "date": "2025-09-15",
             "files": [],
             "images": [
@@ -1137,7 +1138,7 @@
             "title": "[kt cloud] 2025년 9월 신입사원 공개채용 (~9/24수 17:00까지)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206433",
-            "views": 783,
+            "views": 812,
             "date": "2025-09-15",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206433&attachNo=175366"
@@ -1156,7 +1157,7 @@
             "title": "[KB증권] 2025 KB증권 4급 신입직원 공개채용 (~9/25)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206432",
-            "views": 599,
+            "views": 629,
             "date": "2025-09-15",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206432&attachNo=175365"
@@ -1172,7 +1173,7 @@
             "title": "[공개SW특강] 데이터 로그 저장 및 수집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206431",
-            "views": 667,
+            "views": 694,
             "date": "2025-09-15",
             "files": [],
             "images": [
@@ -1189,7 +1190,7 @@
             "title": "2025-2학기 대학원 한마당 소프트웨어학과 대학원 진학설명회(9/24(수) 14시) 및 오픈랩 안내 (9/22(월)~9/29(월))",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206318",
-            "views": 822,
+            "views": 854,
             "date": "2025-09-11",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206318&attachNo=175224",
@@ -1218,7 +1219,7 @@
             "title": "2025 한화그룹 기계/서비스 부문 핵심인재 채용 (~9/17)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206315",
-            "views": 811,
+            "views": 841,
             "date": "2025-09-11",
             "files": [],
             "images": [
@@ -1232,7 +1233,7 @@
             "title": "[현대모비스] 25년 하반기 신입 채용 (~9/22(월) 10:00)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206314",
-            "views": 766,
+            "views": 795,
             "date": "2025-09-11",
             "files": [],
             "images": [
@@ -1246,7 +1247,7 @@
             "title": "Trustworthy and Continually Adaptable Multimodal Agents(16:30 - 17:30, Oct 1st, 2025)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206206",
-            "views": 928,
+            "views": 954,
             "date": "2025-09-10",
             "files": [],
             "images": [],
@@ -1261,7 +1262,7 @@
             "title": "[현대건설/신입채용] 2025년 9월 현대건설 신입사원 채용 (지원서 접수: ~9/29월)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206205",
-            "views": 794,
+            "views": 821,
             "date": "2025-09-10",
             "files": [],
             "images": [
@@ -1275,7 +1276,7 @@
             "title": "[카카오그룹] 2026년 신입크루 공채(~9/28(일)까지)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206203",
-            "views": 852,
+            "views": 878,
             "date": "2025-09-10",
             "files": [],
             "images": [
@@ -1289,7 +1290,7 @@
             "title": "2025-2학기 인공지능학과 진학설명회 개최 안내 (9/16 화, 17:00/ 26110호, 온라인 ZOOM)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206201",
-            "views": 820,
+            "views": 846,
             "date": "2025-09-10",
             "files": [],
             "images": [
@@ -1303,7 +1304,7 @@
             "title": "2025년 산학협력프로젝트 유형2 하반기 참여 신청 공고",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206187",
-            "views": 1047,
+            "views": 1070,
             "date": "2025-09-09",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=206187&attachNo=175102"
@@ -1320,7 +1321,7 @@
             "title": "신동영 감독과 함께하는 생성형 AI 활용 특강 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206066",
-            "views": 816,
+            "views": 840,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1337,7 +1338,7 @@
             "title": "[라이나생명] 2025년 신입 공개 채용 (~9/19)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206064",
-            "views": 829,
+            "views": 854,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1351,7 +1352,7 @@
             "title": "[LGCNS] 2025 하반기 신입사원 채용 (~9/18(목)까지)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206063",
-            "views": 823,
+            "views": 849,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1365,7 +1366,7 @@
             "title": "2025년 제3회 START業 FORUM",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206062",
-            "views": 709,
+            "views": 744,
             "date": "2025-09-08",
             "files": [],
             "images": [],
@@ -1381,7 +1382,7 @@
             "title": "SPARK 16기 참가모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206061",
-            "views": 960,
+            "views": 986,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1400,7 +1401,7 @@
             "title": "[하나은행] K-Digital Training \"디지털하나로\" 모집 (~9/14(일)) 18시까지",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206060",
-            "views": 686,
+            "views": 709,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1414,7 +1415,7 @@
             "title": "신뢰할 수 있는 AI 경진대회",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206059",
-            "views": 731,
+            "views": 755,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1428,7 +1429,7 @@
             "title": "2025년 제25회 TOPCIT 정기평가 (~9/22 월)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=206045",
-            "views": 599,
+            "views": 622,
             "date": "2025-09-08",
             "files": [],
             "images": [
@@ -1445,7 +1446,7 @@
             "title": "2026학년도 전기 일반대학원 성균관대학교 AI시스템공학과 입학설명회",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205941",
-            "views": 860,
+            "views": 883,
             "date": "2025-09-04",
             "files": [],
             "images": [
@@ -1464,7 +1465,7 @@
             "title": "2025 대학생 프로그래밍 경시대회 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205928",
-            "views": 955,
+            "views": 978,
             "date": "2025-09-04",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=205928&attachNo=174779"
@@ -1482,7 +1483,7 @@
             "title": "25년 공군사관학교 미래 항공우주 학술대회 개최",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205759",
-            "views": 1193,
+            "views": 1217,
             "date": "2025-09-02",
             "files": [
                 "https://sw.skku.edu/sw/notice.do?mode=download&articleNo=205759&attachNo=174477",
@@ -1501,7 +1502,7 @@
             "title": "[학생인재개발팀/대학일자리플러스센터] 2025학년도 2학기 진로·취업지원 프로그램 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205737",
-            "views": 829,
+            "views": 854,
             "date": "2025-09-02",
             "files": [],
             "images": [
@@ -1515,7 +1516,7 @@
             "title": "Modular and Interpretable Multimodal AI for Improved Generation and Evaluation(11:00 - 12:00, Sep 8th, 2025)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205687",
-            "views": 824,
+            "views": 852,
             "date": "2025-09-01",
             "files": [],
             "images": [],
@@ -1530,7 +1531,7 @@
             "title": "[금호석유화학그룹] 2025년 하반기 신입사원 공개채용 (~9/12)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205674",
-            "views": 753,
+            "views": 784,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1544,7 +1545,7 @@
             "title": "FY2025 한국투자증권 일반 공채(신입사원 5급) (~10/1)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205673",
-            "views": 900,
+            "views": 927,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1558,7 +1559,7 @@
             "title": "[LIG넥스원] 2025년 하반기 LIG넥스원 인재영입(~9/15)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205672",
-            "views": 762,
+            "views": 786,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1572,7 +1573,7 @@
             "title": "2025년 하반기 (주)두산 사업부문 신입사원·채용연계형 인턴·산학장학생 채용",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205671",
-            "views": 761,
+            "views": 786,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1586,7 +1587,7 @@
             "title": "[한화시스템 방산부문] 2025년 하반기 학/석사 신입사원 채용 (~09.17(수))",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205670",
-            "views": 695,
+            "views": 719,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1600,7 +1601,7 @@
             "title": "[삼성전자 DS부문] 2025년 하반기 신입 채용 상담회/설명회 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205669",
-            "views": 668,
+            "views": 692,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1619,7 +1620,7 @@
             "title": "[삼성전자 DS부문] 2025년 하반기 신입 채용 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205668",
-            "views": 728,
+            "views": 752,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1638,7 +1639,7 @@
             "title": "[IBK기업은행] 2025년 하반기 신입행원 공개채용 (~9/15, 10:00)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205667",
-            "views": 559,
+            "views": 584,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1652,7 +1653,7 @@
             "title": "Improving Language Model Through Context",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205665",
-            "views": 592,
+            "views": 618,
             "date": "2025-09-01",
             "files": [],
             "images": [],
@@ -1667,7 +1668,7 @@
             "title": "[현대로템] 2025 현대로템 하반기 채용 (~9/7)",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205664",
-            "views": 558,
+            "views": 587,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1681,7 +1682,7 @@
             "title": "[삼성전자DX부문] 2025년 하반기 신입사원 모집 안내",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205662",
-            "views": 590,
+            "views": 621,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -1698,7 +1699,7 @@
             "title": "[한온시스템] 2025 채용연계형 인턴십 모집",
             "department": "소프트웨어융합대학",
             "post_link": "https://sw.skku.edu/sw/notice.do?mode=view&articleNo=205661",
-            "views": 557,
+            "views": 597,
             "date": "2025-09-01",
             "files": [],
             "images": [

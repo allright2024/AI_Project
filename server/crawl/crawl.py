@@ -26,18 +26,35 @@ HEADERS = {
 }
 
 urls = [
-    "https://sw.skku.edu/sw/notice.do",
-    "https://cse.skku.edu/cse/notice.do",
-    "https://sco.skku.edu/sco/community/notice.do"
+    "https://sw.skku.edu/sw/notice.do", # 소프트웨어융합대학
+    "https://cse.skku.edu/cse/notice.do", # 소프트웨어학과
+    "https://sco.skku.edu/sco/community/notice.do", # 글로벌융합학부
+    "https://intelligentsw.skku.edu/intelligentsw/notice.do", # 지능형소프트웨어학과
+    "https://cscience.skku.edu/cscience/community/under_notice.do", # 자연과학대학
+    "https://math.skku.edu/math/community/under_notice.do", # 수학과
+    "https://physics.skku.ac.kr/physics/notice/notice.do", # 물리학과
+    # "https://chem.skku.edu/chem/News/notice.do", # 화학과
+    "https://ice.skku.edu/ice/notice.do", # 정보통신대학
+    "https://eee.skku.edu/eee/notice.do", # 전자전기공학부
+    # "https://semi.skku.edu/semi/community/notice.do", # 반도체시스템공학과 (로그인 필요함)
+    "https://skb.skku.edu/mcce/notice.do", # 소재부품융합공학과
+    # "https://sce.skku.edu/sce/notice.do", # 반도체융합공학과 (로그인 필요함)
+    "https://enc.skku.edu/enc/notice.do", # 공과대학
+    # "https://cheme.skku.edu/notice/", # 화학공학부
+    "https://amse.skku.edu/AMSE/notice.do", # 신소재공학부
+    "https://mech.skku.edu/me/notice.do", # 기계공학부
+    # "https://cal.skku.edu/index.php?hCode=BOARD&bo_idx=17", # 건설환경공학부
+    "https://sme.skku.edu/iesys/notice.do", # 시스템경영공학과/산업공학과
+    "https://arch.skku.edu/arch/NEWS/notice.do", # 건축학과
+    # "https://nano.skku.edu/bbs/board.php?tbl=bbs42", # 나노공학과
+    "https://qie.skku.edu/qie/notice.do", # 양자정보공학과
+    "https://biotech.skku.edu/biotech/community/under_notice.do", # 생명공학대학
+    "https://skb.skku.edu/foodlife/community/notice_grad.do", # 식품생명공학과
+    "https://skb.skku.edu/biomecha/community/notice.do", # 바이오메카트로닉스학과
+    "https://skb.skku.edu/gene/community/under_notice.do", # 융합생명공학과
 ]
 
-filenames = [
-    "skku_cci_posts.json",
-    "skku_cse_posts.json",
-    "skku_sco_posts.json"
-]
-
-def get_post_list(notice_url, newest_url=None):
+def get_post_list(notice_url):
     # send request to site
     resp = requests.get(urljoin(notice_url, LIST_URL), headers=HEADERS)
     resp.raise_for_status()
@@ -47,14 +64,25 @@ def get_post_list(notice_url, newest_url=None):
     # get list of posts (total `days` x 5 posts)
     ################################################
     posts = []
+    pinned_posts = []
     # each <li> under <ul class="board-list-wrap">
     for li in soup.select("ul.board-list-wrap > li"):
         # check if date is less than 3 months ago
         info_li = li.select("dd.board-list-content-info ul > li")
-        post_date = info_li[2].get_text(strip=True) if len(info_li) >= 3 else ""
+        post_date_str = info_li[2].get_text(strip=True) if len(info_li) >= 3 else ""
         
         # convert to datetime object
-        post_date = datetime.strptime(post_date, "%Y-%m-%d")
+        # post_date = datetime.strptime(post_date, "%Y-%m-%d")
+        post_date = None
+        for fmt in ("%Y-%m-%d %H:%M", "%Y-%m-%d"):
+            try:
+                post_date = datetime.strptime(post_date_str, fmt)
+                break
+            except ValueError:
+                continue
+        
+        if post_date is None:
+            continue
         
         # check if post is a pinned post
         dt_tag = li.select_one("dt.board-list-content-title")
@@ -62,17 +90,6 @@ def get_post_list(notice_url, newest_url=None):
         if dt_tag:
             is_pinned = "board-list-content-top" in dt_tag.get("class", [])
 
-        if is_pinned:
-            # directly check if the post is in the list
-            
-            # move to next post if pinned post is posted more than 3 months ago
-            if(datetime.now() - post_date > timedelta(days=DAYS)):
-                continue
-        else:    
-            # stop searching if it is posted more than 3 months ago
-            if(datetime.now() - post_date > timedelta(days=DAYS)):
-                break
-        
         # reference a tag
         a_tag = li.select_one("a")
         if not a_tag:
@@ -82,11 +99,22 @@ def get_post_list(notice_url, newest_url=None):
         href = a_tag.get("href")
         post_url = urljoin(notice_url, href)
         post_url = post_url.replace(f"&article.offset=0&articleLimit={ARTICLE_NUM}", "")
+        
+        if is_pinned:            
+            # move to next post if pinned post is posted more than 3 months ago
+            if(datetime.now() - post_date > timedelta(days=DAYS)):
+                continue
+            
+            pinned_posts.append(post_url)
+        else:    
+            # stop searching if it is posted more than 3 months ago
+            if(datetime.now() - post_date > timedelta(days=DAYS)):
+                break
 
-        # add post url to list
-        posts.append(post_url)
+            # add post url to list
+            posts.append(post_url)
 
-    return posts, post_date, is_pinned
+    return pinned_posts, posts
 
 def get_post(post_url, is_pinned=False):
     # send request to site
@@ -178,7 +206,6 @@ def get_post(post_url, is_pinned=False):
         "title": title,
         "department": department,
         "post_link": post_url.replace(f"&article.offset=0&articleLimit={ARTICLE_NUM}", ""), # link to original post
-        "pinned": is_pinned,
         "views": views,
         "date": date,
         "files": files,
@@ -191,7 +218,7 @@ def get_post(post_url, is_pinned=False):
 
 # separate crawling for skku homepage
 # average post per day is significantly bigger than cci & cse
-def get_skku_main(skku_url):
+def get_skku_main(skku_url, latest_url=None):
     posts = []
     offset = 0
     cutoff_date = datetime.now() - timedelta(days=DAYS)
@@ -230,6 +257,9 @@ def get_skku_main(skku_url):
 
             post_url = urljoin(skku_url, a_tag.get("href"))
             post_url = post_url.replace(f"&article.offset={offset}&articleLimit=10", "")
+
+            if post_url == latest_url:
+                return posts
 
             # get full post details
             post = get_skku_post(post_url)
@@ -328,7 +358,7 @@ def check_outdated(filename):
     # check last updated time
     if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
         # read file to check update time
-        with open(filename, "r", encoding="utf-8") as f:
+        with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
             last_updated = datetime.strptime(data["last_updated"], "%Y-%m-%d %H:%M:%S")
 
@@ -354,10 +384,11 @@ def check_outdated(filename):
         # create dummy data
         data = {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "pinned_posts": [],
             "posts": []
         }
         # create a new empty file with update time
-        with open(filename, "w", encoding="utf-8") as f:
+        with open(filepath, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
 
         return True
@@ -373,32 +404,77 @@ if __name__ == "__main__":
             continue
 
         # scrape all post links
-        _urls, post_date, is_pinned = get_post_list(urls[i])
+        _urls_pinned, _urls = get_post_list(urls[i])
         print(f"Found {len(_urls)} posts")
 
         # check files to update only
-        with open(filename, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            latest_post_url = data["posts"][0]["post_link"]
+        if not args.clean_slate:
+            with open(filename, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+                # get latest post links
+                if data.get("pinned_posts"): # list is not empty
+                    latest_pinned_url = data["pinned_posts"][0]["post_link"]
+                else:
+                    latest_pinned_url = None # empty list
+
+                if data.get("posts"): # list is not empty
+                    latest_post_url = data["posts"][0]["post_link"]
+                else: # empty list
+                    latest_post_url = None
+
+                # remove outdated posts
+                while True:
+                    if len(data["pinned_posts"]) == 0:
+                        break
+
+                    _date = datetime.strptime(data["pinned_posts"][len(data["pinned_posts"]) - 1]["date"], "%Y-%m-%d")
+                    if datetime.now() - _date > timedelta(days=DAYS):
+                        data["pinned_posts"].pop()
+                    else: 
+                        break
+
+                while True:
+                    if len(data["posts"]) == 0:
+                        break
+
+                    _date = datetime.strptime(data["posts"][len(data["posts"]) - 1]["date"], "%Y-%m-%d")
+                    if datetime.now() - _date > timedelta(days=DAYS):
+                        data["posts"].pop()
+                    else: 
+                        break
 
         # format post information
+        pinned_posts = []
         posts = []
         new_posts = 0
-        for post_url in _urls:
+        # pinned posts
+        for url in _urls_pinned:
             # if not a clean slate, add new posts only
             if not args.clean_slate:
-                if post_url == latest_post_url:
+                if url == latest_pinned_url:
+                    break
+                new_posts += 1
+            post = get_post(url)
+            pinned_posts.append(post)
+        # unpinned posts
+        for url in _urls:
+            # if not a clean slate, add new posts only
+            if not args.clean_slate:
+                if url == latest_post_url:
                     break
                 new_posts += 1
 
-            post = get_post(post_url)
+            post = get_post(url)
             posts.append(post)
-
-        print(f"{new_posts} posts updated.")
+        
+        if not args.clean_slate:
+            print(f"Total {new_posts} posts updated.")
 
         output = {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "posts": posts + data["posts"]
+            "pinned_posts" : pinned_posts if args.clean_slate else pinned_posts + data["pinned_posts"],
+            "posts": posts if args.clean_slate else posts + data["posts"]
         }
         
         # save to json
@@ -407,16 +483,22 @@ if __name__ == "__main__":
 
         print(f"Updated {filename} at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
 
-    # # crawl skku homepage
-    # if check_outdated("skku_main_posts.json") or args.force_update or args.clean_slate:
-    #     # get all post information
-    #     skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+    # crawl skku homepage
+    if check_outdated("skku_main_posts.json") or args.force_update or args.clean_slate:
+        if not args.clean_slate:
+            with open("skku_main_posts.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+                latest = data["posts"][0]["post_link"] if len(data["posts"]) > 0 else []
+                skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do",latest_url=latest)
+        else:
+            # get all post information
+            skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
 
-    #     # save to json
-    #     with open("skku_main_posts.json", "w", encoding="utf-8") as f:
-    #         json.dump({
-    #             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-    #             "posts": skku_main_posts
-    #         }, f, ensure_ascii=False, indent=4)
+        # save to json
+        with open("skku_main_posts.json", "w", encoding="utf-8") as f:
+            json.dump({
+                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "posts": skku_main_posts
+            }, f, ensure_ascii=False, indent=4)
 
-    #     print(f"Updated skku_main_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+        print(f"Updated skku_main_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")

@@ -1,12 +1,12 @@
 {
-    "last_updated": "2025-11-26 17:52:32",
-    "posts": [
+    "last_updated": "2025-11-26 20:57:23",
+    "pinned_posts": [
         {
             "category": "학사",
             "title": "2025-동계학기 학부생 연구학점제(URP Ⅰ형) 신청 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209452",
-            "views": 686,
+            "views": 702,
             "date": "2025-11-17",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=209452&attachNo=179530",
@@ -16,13 +16,15 @@
             "images": [],
             "attached_links": [],
             "content": "안녕하세요, 글로벌융합학부 사무실입니다.\n2025학년도 동계학기 학부생 연구학점제(URP Ⅰ형)를 다음과 같이 시행하오니 많은 신청 바랍니다.\nⅠ. 학부생 연구학점제(URP Ⅰ형)란\n- 학생이 팀을 이뤄 한 학기 동안\n지도교수 및 지도대학원생과 함께 연구과제를 수행, 이를 학점으로 인정\n받는 제도\n- 인정 학점은 2학점이며, 연구결과보고서를 통해 성적 부여(절대평가)\n- 연구참여 시간 총 90시간 이상 (계절수업: 1일 3시간 x 주 5일 x 6주)\n- 학생 2~4명 + 지도교수 1명 + 지도대학원생 1명\n- 新3품인증제\n인턴십 영역 인정\nⅡ. 신청 자격\n요건\n(모든 항목 충족)\n2007학년도 이후 입학자\n직전학기 평점평균 3.5 이상(F 포함)\n지도교수의 사전 승인\n제외 대상\n(\n하나만 해당 되어도 불가\n)\n전공과목 누적 취득학점이 6학점 미만\n직전학기 연구학점 과목 F 취득\n재학 중 학부생 연구학점제로 인정 가능한 학점이 기준(최대 10학점)을 초과\n2026년 2월 졸업/수료 예정자\nⅢ. 추진 일정\n학생 신청\n11.26.(수) ~ 12.3.(수)\n지도교수 승인\n11.26.(수) ~ 12.5.(금)\n운영기간\n12.22.(월) ~ 2026.1.30.(금)\n학생 결과보고서 제출\n2026.1.26.(월) ~ 1.28.(수)\n결과보고서 승인 및 성적 부여\n2026.1.26.(월) ~ 2.2.(월)\nⅣ. 신청 방법\n- GLS [학업영역] - [학점인정] - [학부생 연구학점제 기한내 신청] (첨부 매뉴얼 참고)\n* 연구계획서 상에 팀원 전원의 학번과 이름이 기입되어야 하며, 전원이 각자 제출해야 함\n* GLS 페이지 신청 시 반드시\n\"저장\" 버튼을 누른 후 \"신청\" 버튼까지\n눌러야함\nⅤ. 주요 사항\n- 지도교수 판단 하에 개인단위 참여 허용(단, 개인참여는 지도대학원생 배정 X)\n- '지도교수 소속 전공'과 '학생이 인정받고자 하는 전공'이 다를 경우 학점인정신청서 제출 必\n- 신청서가 승인된 학생은 수강가능학점 2학점 비워두어야 수강신청 가능\n- 연구년 해당 교수님은 지도 불가"
-        },
+        }
+    ],
+    "posts": [
         {
             "category": "행사/세미나",
             "title": "[75회] 글로벌 IT전문가와 킹고인의 만남 시즌2 일흔다섯번째 만남(인사캠 오프라인 참석가능)",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209806",
-            "views": 125,
+            "views": 146,
             "date": "2025-11-21",
             "files": [],
             "images": [
@@ -41,7 +43,7 @@
             "title": "2025학년도 2학기 기말강의평가 시행 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209678",
-            "views": 230,
+            "views": 247,
             "date": "2025-11-20",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=209678&attachNo=179874"
@@ -55,7 +57,7 @@
             "title": "3품인증제 일부 인증 취득기준 변경 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209495",
-            "views": 305,
+            "views": 325,
             "date": "2025-11-17",
             "files": [],
             "images": [],
@@ -67,7 +69,7 @@
             "title": "2025학년도 인공지능융합전공 겨울계절학기 운영과목 안내",
             "department": "인공지능융합전공",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209342",
-            "views": 578,
+            "views": 604,
             "date": "2025-11-13",
             "files": [],
             "images": [],
@@ -81,7 +83,7 @@
             "title": "2025-2학기 학생성공 창의장학생 신청 안내(~11.16.(일))",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209212",
-            "views": 669,
+            "views": 686,
             "date": "2025-11-11",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=209212&attachNo=179221"
@@ -95,7 +97,7 @@
             "title": "AI스타트업 - 업스테이지 CEO초청 『Tech for AX 콘서트』 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209135",
-            "views": 229,
+            "views": 246,
             "date": "2025-11-10",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=209135&attachNo=179082"
@@ -113,7 +115,7 @@
             "title": "2026-1학기 융합연구학점제(URP Ⅲ형) 신청 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=209131",
-            "views": 232,
+            "views": 252,
             "date": "2025-11-10",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=209131&attachNo=179072",
@@ -132,7 +134,7 @@
             "title": "2025년 동계 글로벌 챌린지 프로그램 참가 학생 모집(~11/16)",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=208715",
-            "views": 608,
+            "views": 625,
             "date": "2025-11-03",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=208715&attachNo=178543",
@@ -154,7 +156,7 @@
             "title": "성균관 인공지능학회 SKKAI 2025 IBM Qiskit Fall Fest 행사 신청 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=208669",
-            "views": 359,
+            "views": 376,
             "date": "2025-11-03",
             "files": [],
             "images": [
@@ -173,7 +175,7 @@
             "title": "2025학년도 글로벌융합학부 겨울 계절수업 강의배정 공개전형 공고",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=208397",
-            "views": 809,
+            "views": 826,
             "date": "2025-10-27",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=208397&attachNo=178095"
@@ -190,7 +192,7 @@
             "title": "[인공지능혁신융합대학사업단] 미국 UNLV 해외 교육 모집안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=208301",
-            "views": 663,
+            "views": 680,
             "date": "2025-10-24",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=208301&attachNo=178006"
@@ -206,7 +208,7 @@
             "title": "[74회] 글로벌 IT전문가와 킹고인의 만남 시즌2 일흔네번째 만남(인사캠 오프라인 참석가능)",
             "department": "인공지능융합학과(일반대학원)",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=208167",
-            "views": 591,
+            "views": 608,
             "date": "2025-10-21",
             "files": [],
             "images": [
@@ -225,7 +227,7 @@
             "title": "(중요)글로벌융합학부 전공 통합운영 관련 안내 및 신청 접수(복수전공생 포함, ~11/7)",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=207980",
-            "views": 11352,
+            "views": 11372,
             "date": "2025-10-17",
             "files": [],
             "images": [
@@ -239,7 +241,7 @@
             "title": "[인공지능혁신융합대학사업단] 2025 캡스톤 디자인 및 AI 해커톤 참가자 모집]",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=207162",
-            "views": 1672,
+            "views": 1689,
             "date": "2025-09-26",
             "files": [],
             "images": [
@@ -255,7 +257,7 @@
             "title": "2025학년도 동계 글로벌캠프 참가자 선발 공고",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=206916",
-            "views": 1880,
+            "views": 1897,
             "date": "2025-09-22",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=206916&attachNo=175938"
@@ -273,7 +275,7 @@
             "title": "글로벌융합학부-컴퓨터교육과 연합 AI 해커톤 참가팀 모집(~10/9(목))",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=206827",
-            "views": 1654,
+            "views": 1671,
             "date": "2025-09-19",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=206827&attachNo=175829"
@@ -289,7 +291,7 @@
             "title": "2025년 2학기 솦선배와 솦토링 멘티 모집",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=206805",
-            "views": 2253,
+            "views": 2270,
             "date": "2025-09-19",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=206805&attachNo=175811",
@@ -308,7 +310,7 @@
             "title": "[73회] 글로벌 IT전문가와 킹고인의 만남 시즌2 일흔세번째 만남(인사캠 오프라인 참석가능)",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=206567",
-            "views": 2680,
+            "views": 2697,
             "date": "2025-09-16",
             "files": [],
             "images": [
@@ -325,7 +327,7 @@
             "title": "[SW중심대학사업단] 챌린지스퀘어-개방형 온라인 특강",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=206517",
-            "views": 2583,
+            "views": 2600,
             "date": "2025-09-16",
             "files": [],
             "images": [
@@ -342,7 +344,7 @@
             "title": "2025학년도 2학기 대학원 한마당 개최 안내 (인공지능융합학과/인터랙션사이언스학과)",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=206500",
-            "views": 2457,
+            "views": 2474,
             "date": "2025-09-16",
             "files": [],
             "images": [
@@ -356,7 +358,7 @@
             "title": "2025년 제24회 TOPCIT 정기평가 (~9/22 월)",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=206012",
-            "views": 2966,
+            "views": 2983,
             "date": "2025-09-05",
             "files": [],
             "images": [
@@ -373,7 +375,7 @@
             "title": "2025-2학기 지도교수 배정 및 S-On 온라인 상담 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=205895",
-            "views": 2765,
+            "views": 2785,
             "date": "2025-09-04",
             "files": [
                 "https://sco.skku.edu/sco/community/notice.do?mode=download&articleNo=205895&attachNo=174721"
@@ -387,7 +389,7 @@
             "title": "2025-2학기 글로벌융합학부 개설강의 강의실, T/O 변경 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=205862",
-            "views": 2464,
+            "views": 2481,
             "date": "2025-09-03",
             "files": [],
             "images": [],
@@ -399,7 +401,7 @@
             "title": "2025-2학기 진로 취업지원 프로그램 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=205760",
-            "views": 1994,
+            "views": 2011,
             "date": "2025-09-02",
             "files": [],
             "images": [
@@ -414,7 +416,7 @@
             "title": "신동영 감독과 함께하는 생성형 AI 활용 특강 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=205697",
-            "views": 1700,
+            "views": 1717,
             "date": "2025-09-01",
             "files": [],
             "images": [
@@ -431,7 +433,7 @@
             "title": "2025학년도 2학기 학생수업제안 시행 안내",
             "department": "글로벌융합학부",
             "post_link": "https://sco.skku.edu/sco/community/notice.do?mode=view&articleNo=205492",
-            "views": 1510,
+            "views": 1527,
             "date": "2025-08-29",
             "files": [],
             "images": [
