@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from datetime import datetime, timedelta
 import os
 import json
@@ -9,6 +9,7 @@ import argparse
 # get command line arguments
 parser = argparse.ArgumentParser(description="Crawl SKKU notice posts")
 parser.add_argument("--days", type=int, default=90, help="post date threshold")
+parser.add_argument("--clean-slate", action="store_true", help="get everything regardless of current state")
 parser.add_argument("--force-update", action="store_true", help="force update regardless of update time")
 args = parser.parse_args()
 
@@ -27,36 +28,51 @@ HEADERS = {
 urls = [
     "https://sw.skku.edu/sw/notice.do",
     "https://cse.skku.edu/cse/notice.do",
+    "https://sco.skku.edu/sco/community/notice.do"
 ]
 
 filenames = [
     "skku_cci_posts.json",
     "skku_cse_posts.json",
+    "skku_sco_posts.json"
 ]
 
-def get_post_list(notice_url):
+def get_post_list(notice_url, newest_url=None):
     # send request to site
     resp = requests.get(urljoin(notice_url, LIST_URL), headers=HEADERS)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    ##################################
-    # get list of posts (500 posts)
-    ##################################
+    ################################################
+    # get list of posts (total `days` x 5 posts)
+    ################################################
     posts = []
     # each <li> under <ul class="board-list-wrap">
     for li in soup.select("ul.board-list-wrap > li"):
         # check if date is less than 3 months ago
         info_li = li.select("dd.board-list-content-info ul > li")
         post_date = info_li[2].get_text(strip=True) if len(info_li) >= 3 else ""
-
+        
         # convert to datetime object
         post_date = datetime.strptime(post_date, "%Y-%m-%d")
         
-        # stop searching if it is more than 3 months
-        if(datetime.now() - post_date > timedelta(days=DAYS)):
-            break
+        # check if post is a pinned post
+        dt_tag = li.select_one("dt.board-list-content-title")
+        is_pinned = False
+        if dt_tag:
+            is_pinned = "board-list-content-top" in dt_tag.get("class", [])
 
+        if is_pinned:
+            # directly check if the post is in the list
+            
+            # move to next post if pinned post is posted more than 3 months ago
+            if(datetime.now() - post_date > timedelta(days=DAYS)):
+                continue
+        else:    
+            # stop searching if it is posted more than 3 months ago
+            if(datetime.now() - post_date > timedelta(days=DAYS)):
+                break
+        
         # reference a tag
         a_tag = li.select_one("a")
         if not a_tag:
@@ -65,22 +81,22 @@ def get_post_list(notice_url):
         # clean up url
         href = a_tag.get("href")
         post_url = urljoin(notice_url, href)
-        post_url = post_url.replace("&article.offset=0&articleLimit=500", "")
+        post_url = post_url.replace(f"&article.offset=0&articleLimit={ARTICLE_NUM}", "")
 
         # add post url to list
         posts.append(post_url)
 
-    return posts
+    return posts, post_date, is_pinned
 
-def get_post(post_url):
+def get_post(post_url, is_pinned=False):
     # send request to site
     resp = requests.get(post_url, headers=HEADERS)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    ##################################
+    ################################################
     # post information
-    ##################################
+    ################################################
 
     # reference title container
     title_div = soup.select_one(".board-view-title-wrap")
@@ -112,9 +128,9 @@ def get_post(post_url):
         views = 0
     date = post_info[2].get_text(strip=True) if len(post_info) >= 3 else "" # date posted
 
-    ##################################
+    ################################################
     # post contents
-    ##################################
+    ################################################
 
     # extract file links
     files = []
@@ -152,9 +168,9 @@ def get_post(post_url):
     # extract content as text
     content = content_div.get_text(separator="\n", strip=True) if content_div else ""
 
-    ##################################
+    ################################################
     # assemble information
-    ##################################
+    ################################################
 
     # assemble into json format
     post = {
@@ -162,6 +178,7 @@ def get_post(post_url):
         "title": title,
         "department": department,
         "post_link": post_url.replace(f"&article.offset=0&articleLimit={ARTICLE_NUM}", ""), # link to original post
+        "pinned": is_pinned,
         "views": views,
         "date": date,
         "files": files,
@@ -232,9 +249,9 @@ def get_skku_post(post_url):
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    ##################################
+    ################################################
     # post information
-    ##################################
+    ################################################
 
     # reference title container
     title_div = soup.find("th", attrs={"scope": "col"})
@@ -252,9 +269,9 @@ def get_skku_post(post_url):
 
     date = title_div.select_one("span.date").get_text(strip=True) # date posted
 
-    ##################################
+    ################################################
     # post contents
-    ##################################
+    ################################################
 
     # extract file links
     files = []
@@ -284,9 +301,9 @@ def get_skku_post(post_url):
     # extract content as text
     content = content_div.get_text(strip=True) if content_div else ""
     
-    ##################################
+    ################################################
     # assemble information
-    ##################################
+    ################################################
 
     # assemble into json format
     post = {
@@ -316,7 +333,7 @@ def check_outdated(filename):
             last_updated = datetime.strptime(data["last_updated"], "%Y-%m-%d %H:%M:%S")
 
             # up to date or user request force update
-            if datetime.now() - last_updated > timedelta(hours=6) or args.force_update:
+            if datetime.now() - last_updated > timedelta(hours=6) or args.force_update or args.clean_slate:
                 print("Updating...")
                 return True
             else:
@@ -348,40 +365,58 @@ def check_outdated(filename):
 if __name__ == "__main__":
     # crawl cci & cse
     for i in range(len(urls)):
-        if not check_outdated(filenames[i]):
+        # format file name
+        filename = "skku_" + urlparse(urls[i]).hostname.split(".")[0] + "_posts.json"
+
+        # check if outdated
+        if not check_outdated(filename):
             continue
 
         # scrape all post links
-        _urls = get_post_list(urls[i])
+        _urls, post_date, is_pinned = get_post_list(urls[i])
         print(f"Found {len(_urls)} posts")
+
+        # check files to update only
+        with open(filename, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            latest_post_url = data["posts"][0]["post_link"]
 
         # format post information
         posts = []
+        new_posts = 0
         for post_url in _urls:
+            # if not a clean slate, add new posts only
+            if not args.clean_slate:
+                if post_url == latest_post_url:
+                    break
+                new_posts += 1
+
             post = get_post(post_url)
             posts.append(post)
 
+        print(f"{new_posts} posts updated.")
+
         output = {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "posts": posts
+            "posts": posts + data["posts"]
         }
         
         # save to json
-        with open(filenames[i], "w", encoding="utf-8") as f:
+        with open(filename, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=4)
 
-        print(f"Updated {filenames[i]} at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+        print(f"Updated {filename} at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
 
-    # crawl skku homepage
-    if check_outdated("skku_main_posts.json") or args.force_update:
-        # get all post information
-        skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+    # # crawl skku homepage
+    # if check_outdated("skku_main_posts.json") or args.force_update or args.clean_slate:
+    #     # get all post information
+    #     skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
 
-        # save to json
-        with open("skku_main_posts.json", "w", encoding="utf-8") as f:
-            json.dump({
-                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "posts": skku_main_posts
-            }, f, ensure_ascii=False, indent=4)
+    #     # save to json
+    #     with open("skku_main_posts.json", "w", encoding="utf-8") as f:
+    #         json.dump({
+    #             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    #             "posts": skku_main_posts
+    #         }, f, ensure_ascii=False, indent=4)
 
-        print(f"Updated skku_main_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+    #     print(f"Updated skku_main_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")

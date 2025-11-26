@@ -78,7 +78,8 @@ def get_post_list(notice_url):
         # clean up url
         href = a_tag.get("href")
         post_url = urljoin(notice_url, href)
-        post_url = post_url.replace("&article.offset=0&articleLimit=500", "")
+        post_url = post_url.replace(f"&article.offset=0&articleLimit={ARTICLE_NUM}", "")
+        print(post_url) ###################################################
 
         # add post url to list
         posts.append((post_url, post_date))
