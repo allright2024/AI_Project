@@ -6,10 +6,10 @@ from sentence_transformers.evaluation import InformationRetrievalEvaluator
 from torch.utils.data import DataLoader
 
 BASE_MODEL_NAME = "jhgan/ko-sbert-nli" # base sbert 모델
-TRAIN_DATA_FILE = "rag_dataset_with_questions.json" 
+TRAIN_DATA_FILE = "../data_augmentation/rag_dataset_with_questions_1500.json" 
 OUTPUT_PATH = "./output/fine-tuned-sbert"   
 BATCH_SIZE = 10      
-NUM_EPOCHS = 3      
+NUM_EPOCHS = 10      
 MAX_SEQ_LENGTH = 512  
 VAL_RATIO = 0.1       # 검증 데이터 비율 (10%)
 
