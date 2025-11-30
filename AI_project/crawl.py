@@ -54,8 +54,8 @@ def get_post_list(notice_url):
         post_date = datetime.strptime(post_date, "%Y-%m-%d")
         
         # stop searching if it is more than 3 months
-        if(datetime.now() - post_date > timedelta(days=DAYS)):
-            break
+        if datetime.now() - post_date > timedelta(days=DAYS):
+            continue
 
         # reference a tag
         a_tag = li.select_one("a")
