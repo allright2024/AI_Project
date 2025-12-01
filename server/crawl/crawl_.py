@@ -34,6 +34,19 @@ filenames = [
     "skku_cse_posts.json",
 ]
 
+def load_existing_data(filename):
+    filepath = os.path.join(DIR, filename)
+    if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+        with open(filepath, "r", encoding="utf-8") as f:
+            try:
+                data = json.load(f)
+                existing_urls = {post["post_link"] for post in data.get('posts', [])}
+                return data, existing_urls
+            except json.JSONDecodeError:
+                pass
+
+    return {"last_updated": "", "posts": []}, set()
+
 def get_post_list(notice_url):
     # send request to site
     resp = requests.get(urljoin(notice_url, LIST_URL), headers=HEADERS)
@@ -68,7 +81,7 @@ def get_post_list(notice_url):
         post_url = post_url.replace("&article.offset=0&articleLimit=500", "")
 
         # add post url to list
-        posts.append(post_url)
+        posts.append((post_url, post_date))
 
     return posts
 
@@ -174,11 +187,11 @@ def get_post(post_url):
 
 # separate crawling for skku homepage
 # average post per day is significantly bigger than cci & cse
-def get_skku_main(skku_url):
+def get_skku_main(skku_url, existing_urls, last_updated_time):
     posts = []
     offset = 0
     cutoff_date = datetime.now() - timedelta(days=DAYS)
-
+    skipped_count = 0
     while True:
         # set url suffix
         offset_suffix = f"?mode=list&&articleLimit=10&article.offset={offset}"
@@ -194,6 +207,7 @@ def get_skku_main(skku_url):
         
         # break condition
         stop_scraping = False
+        
 
         for li in li_list:
             info_li = li.select("dd.board-list-content-info ul > li")
@@ -214,6 +228,22 @@ def get_skku_main(skku_url):
             post_url = urljoin(skku_url, a_tag.get("href"))
             post_url = post_url.replace(f"&article.offset={offset}&articleLimit=10", "")
 
+            should_crawl = True
+
+            if post_url in existing_urls:
+                if post_date > last_updated_time:
+                    should_crawl = True
+                else:
+                    should_crawl = False
+                    skipped_count += 1
+
+            if post_url in existing_urls:
+                if skipped_count > 10:
+                    stop_scraping = True
+                    break
+                continue
+            
+            skipped_count = 0
             # get full post details
             post = get_skku_post(post_url)
             posts.append(post)
@@ -350,6 +380,14 @@ if __name__ == "__main__":
     for i in range(len(urls)):
         if not check_outdated(filenames[i]):
             continue
+        filename = filenames[i]
+        existing_data, existing_urls = load_existing_data(filename)
+
+        last_updated_str = existing_data.get("last_updated", "2000-01-01 00:00:00")
+        try:
+            last_updated_time = datetime.strptime(last_updated_str, "%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            last_updated_time = datetime(2000, 1, 1)
 
         # scrape all post links
         _urls = get_post_list(urls[i])
@@ -357,31 +395,73 @@ if __name__ == "__main__":
 
         # format post information
         posts = []
-        for post_url in _urls:
+        updated_urls = set()
+        skipped_count = 0
+        for post_url, post_date in _urls:
+            should_crawl = True
+
+            if post_url in existing_urls:
+                if post_date > last_updated_time:
+                    updated_urls.add(post_url)
+                    should_crawl = True
+                else:
+                    should_crawl = False
+
+            if not should_crawl:
+                skipped_count += 1
+                continue
+
             post = get_post(post_url)
             posts.append(post)
 
-        output = {
-            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "posts": posts
-        }
+        # output = {
+        #     "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        #     "posts": posts
+        # }
         
         # save to json
+        if posts:
+            if updated_urls:
+                existing_data['posts'] = [
+                    p for p in existing_data['posts'] 
+                    if p['post_link'] not in updated_urls
+                ]
+
+            existing_data['posts'] = posts + existing_data["posts"]
+            existing_data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         with open(filenames[i], "w", encoding="utf-8") as f:
-            json.dump(output, f, ensure_ascii=False, indent=4)
+            json.dump(existing_data, f, ensure_ascii=False, indent=4)
 
-        print(f"Updated {filenames[i]} at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+        print(f"Updated {filenames[i]} at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+    main_filename = "skku_main_posts.json"
     # crawl skku homepage
-    if check_outdated("skku_main_posts.json") or args.force_update:
+    if check_outdated(main_filename) or args.force_update:
         # get all post information
-        skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do")
+        
+        existing_main_data, existing_main_urls = load_existing_data(main_filename)
 
-        # save to json
-        with open("skku_main_posts.json", "w", encoding="utf-8") as f:
-            json.dump({
-                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "posts": skku_main_posts
-            }, f, ensure_ascii=False, indent=4)
+        last_updated_str = existing_main_data.get("last_updated", "2000-01-01 00:00:00")
+        try:
+            last_updated_time = datetime.strptime(last_updated_str, "%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            last_updated_time = datetime(2000, 1, 1)
 
-        print(f"Updated skku_main_posts.json at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+        skku_main_posts = get_skku_main("https://www.skku.edu/skku/campus/skk_comm/notice01.do", existing_main_urls, last_updated_time)
+
+        if skku_main_posts:
+            new_main_urls = {p['post_link'] for p in skku_main_posts}
+            existing_main_data['posts'] = [
+                p for p in existing_main_data['posts'] 
+                if p['post_link'] not in new_main_urls
+            ]
+            existing_main_data["posts"] = skku_main_posts + existing_main_data["posts"]
+            existing_main_data["last_updated"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            # save to json
+            with open(main_filename, "w", encoding="utf-8") as f:
+                json.dump(existing_main_data, f, ensure_ascii=False, indent=4)
+
+            print(f"Updated skku_main_posts.json at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        else:
+            print(f" No new posts for {main_filename}.")
