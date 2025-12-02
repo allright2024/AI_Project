@@ -7,4 +7,3 @@ server/crawl/__pycache__
 __pycache__
 sbert/checkpoints
 sbert/output
-server/crawl/skku_notice_db

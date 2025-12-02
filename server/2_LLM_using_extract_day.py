@@ -11,7 +11,7 @@ import time
 load_dotenv()
 
 USER_MODEL_REQUREST = "gemini-2.5-flash-lite" 
-JSON_FILE_DIR = "./crawl" # 크롤링한 파일 저장 위치
+JSON_FILE_DIR = "./crawl/skku_all.json" # 크롤링한 파일 저장 위치
 JSON_FILE_NAME = "skku_1500.json" # 크롤링한 파일 이름 형식
 
 # find all files with format skku_*_posts.json

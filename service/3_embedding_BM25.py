@@ -7,7 +7,7 @@ from chromadb.utils import embedding_functions
 from rank_bm25 import BM25Okapi
 from tqdm import tqdm 
 
-AUGMENTED_JSON_PATH = 'skku_augmented.json' # 2_LLM_using_extract_day.py 거친 파일
+AUGMENTED_JSON_PATH = '../server/crawl/skku_1500.json' # 2_LLM_using_extract_day.py 거친 파일
 
 # 출력 파일 및 디렉터리
 CHROMA_DB_PATH = './skku_notice_db'  # Vector DB 저장
@@ -69,7 +69,7 @@ def run_chunking(augmented_notices):
             "title": notice.get("title"),
             "start_date": notice.get("start_date", "N/A"),
             "end_date": notice.get("end_date", "N/A"),
-            # "category": notice.get("category", "일반"), # (카테고리도 추출했다면 포함)
+            # "category": notice.get("category", "일반"),
         }
         
         # 3. 텍스트 분할 실행
