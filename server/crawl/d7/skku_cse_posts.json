@@ -1,0 +1,131 @@
+{
+    "last_updated": "2025-12-05 20:47:08",
+    "pinned_posts": [],
+    "posts": [
+        {
+            "category": "학사",
+            "title": "2025 폭력예방교육 이수 안내(학사과정생 미이수 시 성적확인 불가)",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210360",
+            "views": 114,
+            "date": "2025-12-05",
+            "files": [],
+            "images": [],
+            "attached_links": [
+                "https://icampus.skku.edu/",
+                "https://icampus.skku.edu/"
+            ],
+            "content": "[2025 폭력예방교육 이수 안내]\n★학사과정생 미이수 시 성적확인 불가★\n폭력예방교육은 법정의무교육으로서 모든 재학생(학부생, 대학원생) 여러분께서는 해당 기간 내에 모두 이수하여주시기 바랍니다. (온라인교육)\n가. 교육 강좌: 2025 학생을 위한 폭력예방교육(법정의무교육)\n※ 한국어/영어/중국어 버전 중 택1\n나. 이수기간: 2025. 12. 31.까지\n※ 단, 학부생 및 외국국적 학부생/대학원생의 경우 미이수 시 성적확인이 제한되므로,\n2025-2학기 성적공시 시작일(2025. 12. 26.)의 하루 전(2025. 12. 25.)까지 반드시 이수하시길 바랍니다. (교육 이수 완료 후 다음날부터 성적 확인 가능)\n다. 이수방법\n- 성균관대 i-Campus(\nhttps://icampus.skku.edu/\n) 접속/로그인→ 나의과목바로가기 → 대시보드 과목선택(2025 학생을 위한 폭력예방교육)→ 영상시청 및 퀴즈참여(강의콘텐츠) 또는 비정규강좌 → 법정의무교육체크 후 조회 → 신청(2025 학생을 위한 폭력예방교육)\n라. 학부생 인성품 자동인정\n- 학부생(휴·복학생 포함)의 경우, 교육 이수 시 인성품(교내봉사)인정: 연 최대 5시간 인정\n- 이전년도 폭력예방교육 이수여부와 관계없이, 2025년 버전의 폭력예방교육을 수강하면 인성품 인정\n- 인성품 취득방법: 학생지원팀에서 수강 후 2주 이내 자동 승인 (학생은 별도의 조치가 필요 없음)\n마. 유의사항(성적공시기간 중 부분 제한 조치 안내)\n- 학부생 미이수 시 성적확인 불가 (성적공시 마지막 날에 한해서, 미이수 학생도 성적확인 가능)\n- 외국국적 대학원생 미이수 시 성적확인 불가 (성적공시 마지막 날에 한해서, 미이수 학생도 성적확인 가능)\n- 전 과목 교육 이수 완료 후 공시기간 내에 성적 확인 가능 (단, 이수 완료 후 다음 날부터 확인 가능)\n※ 문의:\n- 폭력예방교육: 인권센터, (인사캠) 02-760-1299, (자과캠) 031-290-5260, helper@skku.edu"
+        },
+        {
+            "category": "채용/모집",
+            "title": "[NAVER Cloud] Observability Platform 기반 지능형 시계열 데이터 분석 및 이상 징후 탐지 Research (체험형 인턴)(~12/10 18시)",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210357",
+            "views": 229,
+            "date": "2025-12-05",
+            "files": [],
+            "images": [],
+            "attached_links": [
+                "https://recruit.navercloudcorp.com/rcrt/view.do?annoId=30004237&sw=&subJobCdArr=&sysCompanyCdArr=&empTypeCdArr=0040&entTypeCdArr=&workAreaCdArr="
+            ],
+            "content": "[NAVER Cloud] Observability Platform 기반 지능형 시계열 데이터 분석 및 이상 징후 탐지 Research (체험형 인턴)\nㅇ\n부서 소개\n: 저희 부서는 서비스 신뢰성 확보를 위한 SRE/DevOps 업무와 SRE 관점의 신뢰성 확보를 위한 서비스 관측 가능성\n(Observability) 및 모니터링 플랫폼을 개발 및 클라우드 서비스에 적용하는 역할을 수행하고 있습니다.\nㅇ\n담당업무\n- Observability Platform 시계열 데이터 파이프라인 (ETL)구축\n- Observability Platform의 metric 데이터분석 및 metric 간 상관 분석\n- Prophet, LSTM을 활용한 metric 추세 분석 및 예측, ChangePoint Detection\n- 분석 차트 가시화 및 리포트\nㅇ\n지원자격\n- 국내/외 정규대학(학사) 재학생 또는 기졸업자\n- 인턴십 기간(약 3개월) 동안 Full-Time 근무가 가능하신 분\n- 컴퓨터 공학 또는 IT 서비스 관련 분야를 전공하신 분\n- 상용 IT 제품 또는 오픈소스 분석과 같은 기술 문서 작성 기술을 보유하신 분\n- 기본적인 IT 인프라 및 S/W 서비스에 대한 이해도가 있으신 분\n- Python, Nodejs, Script를 활용한 모듈 구현 및 테스트 경험을 보유하신 분\nㅇ\n우대사항\n- AIOps 오픈소스 구축 및 상용 솔루션 사용 경험을 보유하신 분\n- grafana를 활용한 BI 대시보드 구축 경험을 보유하신 분\n- tensorflow, LSTM 활용 경험을 보유하신 분\nㅇ\n조직구성원 Talk\nObservability & Anomaly Detection 분야의 분석과 연구를 통해 SRE 역량을 강화하며, 팀과 함께 성장해 나갈 분을 기다립니다.\n\"서로를 신뢰하며 협력하는 문화 속에서, 언제나 밝고 활기찬 분위기로 함께 일하고 있습니다.\"\n\"존중과 배려를 바탕으로 다양한 의견을 자유롭게 나누고, 긍정적인 에너지를 팀 전체로 확산시키는 것이 우리의 강점입니다.\"\n\"매일의 업무를 통해 서로에게 배우고 성장하며, 유연한 소통으로 팀워크를 더욱 단단하게 만들어 가고 있습니다.\"\n\"웃음과 열정이 오가는 환경 속에서 각자의 전문성과 개성을 존중하며 최고의 결과를 만들기 위해 노력하고 있습니다.\"\n\"서로의 역량을 북돋아주며 함께 하나의 목표를 향해 나아가는 팀, 이것이 우리가 자랑하는 문화입니다.\"\nㅇ\n전형절차 : 서류전형 > 필기전형(코딩테스트) > 인터뷰 전형 > 인턴십\n※ 전형절차는 일정 및 상황에 따라 변동될 수 있으며, 추가될 수 있습니다.\n※ 인터뷰에 대한 상세 내용은 추후 인터뷰 대상자에게 개별 안내 드릴 예정입니다.\nㅇ\n근무지\n경기도 성남시 분당구 불정로 6 (그린팩토리)\n※ 근무지는 회사 내부 사정에 따라 변경될 수 있습니다.\nㅇ\n지원 방법 : 네이버 클라우드 홈페이지 공고를 통해 지원\n(\n공고 링크\n)\nㅇ\n모집기한 :\n(~\n25/12/10\n수요일 오후 6시\n까지 모집 예정)"
+        },
+        {
+            "category": "학사",
+            "title": "인턴십 관련 FAQ 안내",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210324",
+            "views": 495,
+            "date": "2025-12-04",
+            "files": [],
+            "images": [],
+            "attached_links": [
+                "https://cse.skku.edu/_res/cse/etc/cse_grad_evaluation_info_240409.pdf",
+                "https://cse.skku.edu/cse/resources.do?mode=view&articleNo=156611&article.offset=0&articleLimit=10",
+                "https://cse.skku.edu/cse/resources.do?mode=view&articleNo=160073&article.offset=0&articleLimit=10"
+            ],
+            "content": "인턴십 진행 및 제출과 관련하여 자주 문의되는 내용을 아래와 같이 안내드립니다.\n해당 내용 참고하여 진행해주시기 바랍니다.\n1. 인턴십 졸업요건\n(교육>학사과정>졸업요건)\n소프트웨어학과 학번별 학과 졸업 평가 안내\n2. 인턴십 결과보고서 양식\n(소식>자료실)\n자료실 게시판읽기 ( [ 소프트웨어학과 ] 인턴십 자체 양식 개정 버전 ( 기업 , 연구실 ) ) | 성균관대학교 소프트웨어학과\n3. 인턴십 업무 분야\n(소식>자료실)\n자료실 게시판읽기 ( [ 소프트웨어학과 / 자체양식 ] 인턴십 업무 분야 구분 ) | 성균관대학교 소프트웨어학과\n4. 인턴십 결과보고서 제출\nGLS > 신청/자격관리 > 인턴십신청 > 인턴십신청및조회(소프트웨어학과)\n문의 사항이 있을 경우 학과사무실로 연락주시기 바랍니다.\n(031-299-4101)"
+        },
+        {
+            "category": "행사/세미나",
+            "title": "Theory of Mind Reasoning for LLMs: What do we know and how can we make it better?(13:30 - 14:30, Dec 11th, 2025)",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210309",
+            "views": 122,
+            "date": "2025-12-04",
+            "files": [],
+            "images": [],
+            "attached_links": [
+                "https://hli.skku.edu/InvitedTalk251211",
+                "https://hli.skku.edu/InvitedTalk251211"
+            ],
+            "content": "Title\n: Theory of Mind Reasoning for LLMs: What do we know and how can we make it better?\nSpeaker\n: Prof. Hyunwoo Kim @ KAIST\nTime\n: 13:30 - 14:30, Dec 11th, 2025\nLocation\n: Hybrid\nIn-person: 22410\nOnline:\nhttps://hli.skku.edu/InvitedTalk251211\nLanguage\n: English speech & English slides\nAbstract\n:\nReasoning models are excelling in domains like math and coding where obtaining verifiable ground-truth answers is straightforward. However, acquiring such annotated answers for social reasoning is much more challenging. In this talk, I will discuss our recent works examining what these models are missing and how we can improve LLMs by leveraging their existing strengths. Our approach highlights the importance of inferring perception in social reasoning and reveals parallels between social reasoning and Sequential Monte Carlo, a classical machine learning algorithm. We demonstrate that it is possible to generate much more accurate and efficient reasoning trajectories compared to recent reasoning models. Finally, I will share my perspective on the future of theory-of-mind and social reasoning in the rapidly evolving AI research landscape.\nBio\n:\nHyunwoo Kim is an incoming Assistant Professor at KAIST AI, where he will lead the Computation & Cognition Lab. Currently, he is a postdoctoral scholar working with Yejin Choi at NVIDIA for his gap year. He is interested in building machines capable of reasoning and cognition, by taking an interdisciplinary approach by connecting language models and cognitive science. Hyunwoo has presented his work in top-tier NLP and AI conferences, and he is a recipient of the EMNLP outstanding paper award in 2023. He received his Ph.D. in Computer Science at Seoul National University advised by Gunhee Kim and B.S. in Psychology & Computer Science at Yonsei University in Korea."
+        },
+        {
+            "category": "",
+            "title": "[SW학과] 기말고사 파이팅 간식 푸드트럭 이벤트",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210232",
+            "views": 444,
+            "date": "2025-12-02",
+            "files": [],
+            "images": [
+                "https://cse.skku.edu/_res/editor_image/2025/12/xgZjgAdPrwBnfYlpvvYy0.png"
+            ],
+            "attached_links": [
+                "https://forms.gle/TGMQNCW3octsFVbh6"
+            ],
+            "content": "[기말고사 파이팅 간식 푸드트럭 이벤트]\n2학기 종강을 앞두며 수고한 여러분을 위해\n따뜻한 간식 차가 찾아갑니다!\n▶ 일시\n: 2025년 12월 10일 (수) 13:00 ~ 15:00\n▶ 장소\n: 산학협력센터 1층 앞 공터\n▶ 신청기간\n: 2025년 12월 8일 (월) 오전 11시까지 (선착순 250명)\n▶ URL\n:\nhttps://forms.gle/TGMQNCW3octsFVbh6"
+        },
+        {
+            "category": "채용/모집",
+            "title": "100% 인턴십 연계 — AI NLP, CV 과정 모집 (멋쟁이사자처럼)",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210231",
+            "views": 793,
+            "date": "2025-12-02",
+            "files": [],
+            "images": [],
+            "attached_links": [
+                "https://81684d4d-4d81-45bb-88ca-fa4445b1ac2c.pipedrive.email/c/941jl33q94/j4nngrmq24/rvygvv8yj1/2?redirectUrl=https%3A%2F%2Fbootcamp.likelion.net%2Fschool%2Fkdt-aiplus_cv-3rd&hash=YXhbFMDR5JIRbRCdiFR0TwGDEnm7mSDb3p_qzHsjVM8",
+                "https://81684d4d-4d81-45bb-88ca-fa4445b1ac2c.pipedrive.email/c/941jl33q94/j4nngrmq24/rvygvv8yj1/3?redirectUrl=https%3A%2F%2Fbootcamp.likelion.net%2Fschool%2Fkdt-aiplus_nlp-3rd&hash=kOFAGwZlpOq8EcvWdP6-EK6dsBGTdAZf7Rx7B-Oqkl0"
+            ],
+            "content": "안녕하세요, 성균관대학교 재학생 여러분.\n다가오는 겨울 방학, AI 실무 역량을 확실하게 강화하고 싶은 재학생분들을 위해\n100% 인턴십 연계를 보장하는 AI NLP·CV 심화 과정\n을 안내드립니다.\n모집 과정\n아래 두 과정 모두\n내일배움카드만 있으면 전액 무료\n로 수강 가능합니다.\n10주 완성 AI 엔지니어 컴퓨터 비전(CV) 과정 3기 : 멋사 부트캠프\n10주 완성 AI 엔지니어 자연어처리(NLP) 과정 3기 : 멋사 부트캠프\n커리큘럼 핵심 구성\n저희 과정은 유사·접경 학과 학생분들이\nAI 실무 역량을 단기간에 끌어올릴 수 있도록 구성된\n10\n주 오프라인 집중 교육\n입니다.\nCV 과정\n딥러닝과 Computer Vision 기본기 & CNN 아키텍처\nObject Detection / Segmentation / Generative Model 이론 및 실습\nObject Detection 실전 프로젝트\nSegmentation 실전 프로젝트\n종합 프로젝트 (AI 서비스 개발 및 Demo Day)\nNLP 과정\n딥러닝과 NLP 기본기 & Attention 개념\nLLM의 핵심 구조와 학습 매커니즘\n텍스트 / 멀티모달 모델링\n대화형 생성 모델 / 챗봇 구축\n종합 프로젝트 (AI 서비스 개발 및 Demo Day)\n진행 일정\n-모집 기간:\n2025.11.17 ~ 2025.12.22\n-교육 기간:\n2025.12.23 ~ 2026.02.27\n-교육 형태:\n100% 오프라인 집중형\n-교육 장소:\n서울 중구 퇴계로 324\n성균관대학교 학생 특별 혜택\n지원서 작성 시 지원 경로란에 ‘성균관대학교’를 입력하시면\n추첨을 통해\n스타벅스 라떼 기프티콘\n을 드립니다.\n미래 커리어에 확실한 경쟁력을 더하세요\n전공지식만으로 따라가기 어려운\nAI\n기술 격차\n,\n이번 방학 동안 실무 중심의 체계적인 커리큘럼으로 확실하게 메우시기 바랍니다.\nAI는 더 이상 선택이 아닌 필수 역량입니다.\n여러분의 전공지식을\n산업이 원하는 언어\n로 업그레이드하세요."
+        },
+        {
+            "category": "채용/모집",
+            "title": "[우리은행] 2026년 동계 체험형 인턴 채용 (~12/15 15시까지)",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210172",
+            "views": 723,
+            "date": "2025-12-01",
+            "files": [],
+            "images": [
+                "https://cse.skku.edu/_res/editor_image/2025/12/WUrXZxOWxgtvtBZrMowu0.png",
+                "https://cse.skku.edu/_res/editor_image/2025/12/mOxbpRDrmTLdOpwyyOsy0.png"
+            ],
+            "attached_links": [
+                "https://event.stibee.com/v2/click/NDAwMTcxLzMxMTU5MzYvMjg0Lw/aHR0cHM6Ly93b29yaWJhbmsuY2FyZWVybGluay5rci8",
+                "https://wooribank.careerlink.kr/"
+            ],
+            "content": "우리은행\n2026년 동계 체험형 인턴 채용\n모집부문\n-일반, TECH 부문\n-글로벌 부문\nhttps://wooribank.careerlink.kr/\n부문별 상세 모집 요강은 첨부 이미지 참고\n[일반, TECH 부문]\n[글로벌 부문]"
+        },
+        {
+            "category": "채용/모집",
+            "title": "[안랩] 2025년 개발직군 채용 공고 (~12/7일까지)",
+            "department": "소프트웨어학과",
+            "post_link": "https://cse.skku.edu/cse/notice.do?mode=view&articleNo=210171",
+            "views": 460,
+            "date": "2025-12-01",
+            "files": [],
+            "images": [
+                "https://cse.skku.edu/_res/editor_image/2025/12/KOtFbzLcrWZOYDWdnaEa0.jpg"
+            ],
+            "attached_links": [
+                "https://ahnlab.recruiter.co.kr/career/jobs/89202"
+            ],
+            "content": "https://ahnlab.recruiter.co.kr/career/jobs/89202"
+        }
+    ]
+}
