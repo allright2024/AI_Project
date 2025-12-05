@@ -6,6 +6,7 @@ from fastapi import FastAPI, BackgroundTasks
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import uvicorn
+import argparse
 
 app = FastAPI()
 scheduler = AsyncIOScheduler()
@@ -13,12 +14,17 @@ scheduler = AsyncIOScheduler()
 from llm_processor import process_new_posts
 from embedding_processor import run_embedding_pipeline
 
+parser = argparse.ArgumentParser(description="crawl server app")
+parser.add_argument("--days", type=int, default=90, help="post date threshold")
+args = parser.parse_args()
+
 DIR = os.path.dirname(os.path.abspath(__file__))
 CRAWLERS = [
-    "crawl_dup.py",
+    "crawl.py",
     "crawl_chemistry_engineering.py",
     "crawl_env_engineering.py"
 ]
+DAYS=args.days
 
 def run_crawler(script_name):
     """Runs a single crawler script using subprocess."""
@@ -26,7 +32,7 @@ def run_crawler(script_name):
     print(f"[{datetime.now()}] Starting crawler: {script_name}")
     try:
         result = subprocess.run(
-            ["python", script_path], 
+            ["python", script_path, f"--days={DAYS}"], 
             capture_output=True, 
             text=True, 
             check=True
