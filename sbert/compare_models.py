@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 BASE_MODEL_NAME = "jhgan/ko-sbert-nli"
 FINE_TUNED_MODEL_PATH = "./output/grid_search/lr_5e-05_bs_128_best"
-DATA_FILE = "/Users/yongkim/Desktop/playground/AI_Project/data_augmentation/rag_dataset_with_questions.json"
+DATA_FILE = "/Users/yongkim/Desktop/playground/AI_Project/data_augmentation/rag_dataset_with_questions_1000.json"
 VAL_RATIO = 0.2
 RANDOM_STATE = 42
 
