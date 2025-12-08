@@ -5,10 +5,13 @@ import google.generativeai as genai
 from tqdm import tqdm
 import random
 
-API_KEY = "" 
-INPUT_FILE = "final_rag_chunks.json"
-OUTPUT_FILE = "rag_dataset_with_questions.json"
-DELAY_SECONDS = 4 
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("GOOGLE_API_KEY") 
+INPUT_FILE = "../server/crawl/final_rag_chunks.json"
+OUTPUT_FILE = "rag_dataset_with_questions_1500.json"
+DELAY_SECONDS = 1
 
 genai.configure(api_key=API_KEY, transport='rest')
 
@@ -61,7 +64,7 @@ def main():
     print(f">>> 총 {len(data)}개의 청크를 처리합니다.")
     
     random.shuffle(data)
-    target_data = data[:100] 
+    target_data = data[:1000]
     processed_data = []
     
     print(f">>> 질문 생성 시작... {len(target_data)}개")

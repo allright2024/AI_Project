@@ -10,20 +10,18 @@ from tqdm import tqdm
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Output paths
 CHROMA_DB_PATH = os.path.join(DIR, 'skku_notice_db')
 BM25_MODEL_PATH = os.path.join(DIR, 'bm25_model.pkl')
 CHUNK_DATA_PATH = os.path.join(DIR, 'all_chunks.pkl')
 
-# Settings
 COLLECTION_NAME = 'skku_notices'
 EMBEDDING_MODEL = "jhgan/ko-sbert-nli"
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 
 def load_all_augmented_notices():
-    """Loads and aggregates all skku_*_augmented.json files."""
-    pattern = os.path.join(DIR, "skku_*_augmented.json")
+    """Loads skku_1500.json."""
+    pattern = os.path.join(DIR, "skku_1500.json")
     files = glob.glob(pattern)
     
     all_notices = []
@@ -70,9 +68,11 @@ def run_chunking(notices):
         chunks_texts = text_splitter.split_text(text_to_split)
         
         for chunk_index, chunk_text in enumerate(chunks_texts):
+            formatted_text = f"제목: {metadata['title']} | 내용: {chunk_text}"
+            
             chunk_data = {
                 "id": f"doc_{doc_id}_chunk_{chunk_index}",
-                "text": chunk_text,
+                "text": formatted_text,
                 "metadata": metadata
             }
             all_chunks.append(chunk_data)
@@ -84,7 +84,6 @@ def run_hybrid_indexing(all_chunks):
     """Indexes chunks into ChromaDB and trains BM25."""
     print("\n🏛️ Hybrid indexing started...")
 
-    # --- Vector Index (ChromaDB) ---
     print("  [1] Vector DB (ChromaDB) indexing...")
     
     if not os.path.exists(CHROMA_DB_PATH):
@@ -102,15 +101,10 @@ def run_hybrid_indexing(all_chunks):
         metadata={"hnsw:space": "cosine"}
     )
 
-    # Prepare data
     documents = [chunk['text'] for chunk in all_chunks]
     metadatas = [chunk['metadata'] for chunk in all_chunks]
     ids = [chunk['id'] for chunk in all_chunks]
 
-    # Upsert (overwrite if exists)
-    # Note: This might be slow if we always re-index everything. 
-    # For now, we follow the logic of re-indexing everything to keep it simple and consistent with 3_embedding_BM25.py
-    # Optimization: We could check existing IDs, but re-indexing ensures updates are reflected.
     batch_size = 5000
     for i in tqdm(range(0, len(ids), batch_size), desc="  Chroma Upsert"):
         collection.upsert(
@@ -121,7 +115,6 @@ def run_hybrid_indexing(all_chunks):
     
     print(f"  ✅ Vector DB indexing complete. Saved to '{CHROMA_DB_PATH}'.")
 
-    # --- Keyword Index (BM25) ---
     print("  [2] BM25 indexing...")
 
     print("    - Tokenizing corpus...")
@@ -137,6 +130,11 @@ def run_hybrid_indexing(all_chunks):
     with open(CHUNK_DATA_PATH, 'wb') as f_chunks:
         pickle.dump(all_chunks, f_chunks)
         print(f"  ✅ Chunk data saved to '{CHUNK_DATA_PATH}'.")
+
+    json_path = os.path.join(DIR, 'final_rag_chunks.json')
+    with open(json_path, 'w', encoding='utf-8') as f_json:
+        json.dump(all_chunks, f_json, indent=4, ensure_ascii=False)
+        print(f"  ✅ Chunk data saved to '{json_path}'.")
     
     print(f"✅ Hybrid indexing complete.")
 

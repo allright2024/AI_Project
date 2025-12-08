@@ -1,0 +1,50 @@
+{
+    "last_updated": "2025-12-05 20:44:54",
+    "pinned_posts": [],
+    "posts": [
+        {
+            "category": "학사",
+            "title": "2025 폭력예방교육 이수 안내",
+            "department": "소프트웨어융합대학",
+            "post_link": "https://intelligentsw.skku.edu/intelligentsw/notice.do?mode=view&articleNo=210361",
+            "views": 11,
+            "date": "2025-12-05",
+            "files": [],
+            "images": [],
+            "attached_links": [
+                "https://icampus.skku.edu/",
+                "https://icampus.skku.edu/"
+            ],
+            "content": "[2025 폭력예방교육 이수 안내]\n★학사과정생 미이수 시 성적확인 불가★\n폭력예방교육은 법정의무교육으로서 모든 재학생(학부생, 대학원생) 여러분께서는 해당 기간 내에 모두 이수하여주시기 바랍니다. (온라인교육)\n가. 교육 강좌: 2025 학생을 위한 폭력예방교육(법정의무교육)\n※ 한국어/영어/중국어 버전 중 택1\n나. 이수기간: 2025. 12. 31.까지\n※ 단, 학부생 및 외국국적 학부생/대학원생의 경우 미이수 시 성적확인이 제한되므로,\n2025-2학기 성적공시 시작일(2025. 12. 26.)의 하루 전(2025. 12. 25.)까지 반드시 이수하시길 바랍니다. (교육 이수 완료 후 다음날부터 성적 확인 가능)\n다. 이수방법\n- 성균관대 i-Campus(\nhttps://icampus.skku.edu/\n) 접속/로그인→ 나의과목바로가기 → 대시보드 과목선택(2025 학생을 위한 폭력예방교육)→ 영상시청 및 퀴즈참여(강의콘텐츠) 또는 비정규강좌 → 법정의무교육체크 후 조회 → 신청(2025 학생을 위한 폭력예방교육)\n라. 학부생 인성품 자동인정\n- 학부생(휴·복학생 포함)의 경우, 교육 이수 시 인성품(교내봉사)인정: 연 최대 5시간 인정\n- 이전년도 폭력예방교육 이수여부와 관계없이, 2025년 버전의 폭력예방교육을 수강하면 인성품 인정\n- 인성품 취득방법: 학생지원팀에서 수강 후 2주 이내 자동 승인 (학생은 별도의 조치가 필요 없음)\n마. 유의사항(성적공시기간 중 부분 제한 조치 안내)\n- 학부생 미이수 시 성적확인 불가 (성적공시 마지막 날에 한해서, 미이수 학생도 성적확인 가능)\n- 외국국적 대학원생 미이수 시 성적확인 불가 (성적공시 마지막 날에 한해서, 미이수 학생도 성적확인 가능)\n- 전 과목 교육 이수 완료 후 공시기간 내에 성적 확인 가능 (단, 이수 완료 후 다음 날부터 확인 가능)\n※ 문의:\n- 폭력예방교육: 인권센터, (인사캠) 02-760-1299, (자과캠) 031-290-5260, helper@skku.edu"
+        },
+        {
+            "category": "행사/세미나",
+            "title": "Theory of Mind Reasoning for LLMs: What do we know and how can we make it better?(13:30 - 14:30, Dec 11th, 2025)",
+            "department": "소프트웨어융합대학",
+            "post_link": "https://intelligentsw.skku.edu/intelligentsw/notice.do?mode=view&articleNo=210312",
+            "views": 23,
+            "date": "2025-12-04",
+            "files": [],
+            "images": [],
+            "attached_links": [
+                "https://hli.skku.edu/InvitedTalk251211",
+                "https://hli.skku.edu/InvitedTalk251211"
+            ],
+            "content": "Title\n: Theory of Mind Reasoning for LLMs: What do we know and how can we make it better?\nSpeaker\n: Prof. Hyunwoo Kim @ KAIST\nTime\n: 13:30 - 14:30, Dec 11th, 2025\nLocation\n: Hybrid\nIn-person: 22410\nOnline:\nhttps://hli.skku.edu/InvitedTalk251211\nLanguage\n: English speech & English slides\nAbstract\n:\nReasoning models are excelling in domains like math and coding where obtaining verifiable ground-truth answers is straightforward. However, acquiring such annotated answers for social reasoning is much more challenging. In this talk, I will discuss our recent works examining what these models are missing and how we can improve LLMs by leveraging their existing strengths. Our approach highlights the importance of inferring perception in social reasoning and reveals parallels between social reasoning and Sequential Monte Carlo, a classical machine learning algorithm. We demonstrate that it is possible to generate much more accurate and efficient reasoning trajectories compared to recent reasoning models. Finally, I will share my perspective on the future of theory-of-mind and social reasoning in the rapidly evolving AI research landscape.\nBio\n:\nHyunwoo Kim is an incoming Assistant Professor at KAIST AI, where he will lead the Computation & Cognition Lab. Currently, he is a postdoctoral scholar working with Yejin Choi at NVIDIA for his gap year. He is interested in building machines capable of reasoning and cognition, by taking an interdisciplinary approach by connecting language models and cognitive science. Hyunwoo has presented his work in top-tier NLP and AI conferences, and he is a recipient of the EMNLP outstanding paper award in 2023. He received his Ph.D. in Computer Science at Seoul National University advised by Gunhee Kim and B.S. in Psychology & Computer Science at Yonsei University in Korea."
+        },
+        {
+            "category": "일반",
+            "title": "온라인 교육 지원 프로그램 지원 안내(Online Learning Adventure)",
+            "department": "지능형소프트웨어학과",
+            "post_link": "https://intelligentsw.skku.edu/intelligentsw/notice.do?mode=view&articleNo=210021",
+            "views": 439,
+            "date": "2025-11-27",
+            "files": [],
+            "images": [
+                "https://intelligentsw.skku.edu/_res/editor_image/2025/11/mxVWGYmHZBJWjCUKBttW0.jpg"
+            ],
+            "attached_links": [],
+            "content": "** Online Learning Adventure **\n지능형소프트웨어학과 학생들의 기술 역량 강화 및 최신 트렌드 학습을 지원하고자,\n온라인 교육 사이트 또는 연구 개발에 필요한 온라인 학습도구 결제 시 결제 금액을 지원해드립니다.\n아         래\n1. 지원대상: 지능형소프트웨어학과 학부생/석사생/산학장학생 모두 (휴학생 불가)\n2. 지원금액:\n최대 $200 지원\n(1년 기준: 예시 -  해당 연도 3월 ~ 익년 2월)\n- 삼성전자 DX S/W 알고리즘 특강 입과 시 추가 $200 지원 (학부생 한정)\n3. 지원규정\n- 교육의 경우 수강 과목의 분야 제한 없음\n- 연구 개발에 필요한 학습도구 결제 증빙 시 지원 가능\n4. 제출서류: 결제증빙서류, 개인카드사용사유서(자료실 참고), 수강완료증(온라인 교육 이수 시)\n※ 온라인 교육은 반드시 수강완료증 제출\n5. 제출방법: 이메일로 상시 제출 (제출 건은 일괄 처리될 수 있음)\n- 이메일: intelli.sw@skku.edu"
+        }
+    ]
+}

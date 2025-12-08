@@ -21,7 +21,7 @@ parser.add_argument("--force-update", action="store_true", help="force update re
 args = parser.parse_args()
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-DAYS = args.days # post date threshold
+DAYS = args.days
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -93,7 +93,7 @@ def get_post_list():
                 "url": post_url,
                 "title": title,
                 "date": post_date.strftime("%Y-%m-%d"),
-                "category": "공지사항" # Default category
+                "category": "공지사항"
             })
             
         if stop_crawling:
@@ -204,7 +204,7 @@ if __name__ == "__main__":
                 except:
                     pass
         
-        # Create set of existing URLs for fast lookup
+        
         existing_urls = set()
         for p in existing_posts:
             if "post_link" in p:
@@ -215,7 +215,7 @@ if __name__ == "__main__":
         
         for post_info in post_list:
             if not args.clean_slate and post_info["url"] in existing_urls:
-                continue # Skip if post already exists
+                continue 
             
             full_post = get_post(post_info)
             if full_post:
@@ -224,13 +224,12 @@ if __name__ == "__main__":
                 
         print(f"Total {new_count} posts updated.")
         
-        # Merge posts
+        
         if args.clean_slate:
             final_posts = new_posts_data
         else:
             final_posts = new_posts_data + existing_posts
             
-        # Filter outdated posts from final list
         final_posts = [
             p for p in final_posts 
             if datetime.now() - datetime.strptime(p["date"], "%Y-%m-%d") <= timedelta(days=DAYS)
@@ -238,7 +237,7 @@ if __name__ == "__main__":
         
         output = {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "pinned_posts": existing_pinned, # This site doesn't seem to have pinned posts in the same way, or I didn't implement it. Keeping structure.
+            "pinned_posts": existing_pinned,
             "posts": final_posts
         }
         

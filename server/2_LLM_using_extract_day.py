@@ -11,8 +11,8 @@ import time
 load_dotenv()
 
 USER_MODEL_REQUREST = "gemini-2.5-flash-lite" 
-JSON_FILE_DIR = "./crawl" # 크롤링한 파일 저장 위치
-JSON_FILE_NAME = "skku_*_posts.json" # 크롤링한 파일 이름 형식
+JSON_FILE_DIR = "./crawl/skku_all.json" # 크롤링한 파일 저장 위치
+JSON_FILE_NAME = "skku_1500.json" # 크롤링한 파일 이름 형식
 
 # find all files with format skku_*_posts.json
 pattern = os.path.join(JSON_FILE_DIR, JSON_FILE_NAME)
@@ -85,7 +85,7 @@ extraction_chain = prompt | structured_llm
 def main():
     for file in files:
         notices = load_notices(file)
-        notices = notices["posts"]
+        notices = notices
         
         if notices:
             augmented_results = []
@@ -96,7 +96,7 @@ def main():
             for i, notice in enumerate(notices): 
                 title = notice.get('title', '')
                 content = notice.get('content', '')
-                dates_field = notice.get('dates', [])
+                dates_field = notice.get('date', '')
                 
                 print(f"\n[{i+1}/{len(notices)}] 처리 중: \"{title[:30]}...\"")
                 
@@ -116,12 +116,12 @@ def main():
                     augmented_results.append(notice)
                     
                     print(f"  ▶ [결과] Start: {extracted_data.start_date} / End: {extracted_data.end_date}")
-                    break
+
 
                 except Exception as e:
                     print(f"  ❌ [오류] 문서 처리 실패: {e}")
 
-            output_path = file.replace("posts", "augmented").replace(JSON_FILE_DIR,".")
+            output_path = file
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(augmented_results, f, indent=4, ensure_ascii=False)
                 
@@ -130,4 +130,4 @@ def main():
         else:
             print("⚠️ 처리할 데이터가 없습니다. 파일 경로를 확인하세요.")
 
-main() # -> 따로 호출하여 수행
+main()
