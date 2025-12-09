@@ -7,14 +7,12 @@ from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 import time
 
-# 환경 변수 로드 (.env 파일)
 load_dotenv()
 
 USER_MODEL_REQUREST = "gemini-2.5-flash-lite" 
-JSON_FILE_DIR = "./crawl/skku_all.json" # 크롤링한 파일 저장 위치
-JSON_FILE_NAME = "skku_1500.json" # 크롤링한 파일 이름 형식
+JSON_FILE_DIR = "./"
+JSON_FILE_NAME = "all.json" 
 
-# find all files with format skku_*_posts.json
 pattern = os.path.join(JSON_FILE_DIR, JSON_FILE_NAME)
 files = glob.glob(pattern)
 
@@ -24,22 +22,19 @@ try:
         temperature=0,
         transport="rest" 
     )
-    print(f"✅ LLM 모델('{USER_MODEL_REQUREST}') 로드 완료")
+    print(f"LLM 모델('{USER_MODEL_REQUREST}') 로드 완료")
 except Exception as e:
-    print(f"❌ 모델 로드 실패: {e}")
+    print(f"모델 로드 실패: {e}")
     exit()
 
 def load_notices(file_path):
-    """JSON 파일 로드 함수"""
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
-            # [수정 1] f -> file 로 수정
             notices = json.load(file)
-        print(f"✅ 공지사항 데이터 로드 완료: {file_path} ({len(notices)}개)")
+        print(f"공지사항 데이터 로드 완료: {file_path} ({len(notices)}개)")
         return notices
     except Exception as e:
-        # [수정 2] 에러 원인 출력
-        print(f"❌ 파일 로드 실패 ('{file_path}'): {e}")
+        print(f"파일 로드 실패 ('{file_path}'): {e}")
         return None
     
 class ExtractedDates(BaseModel):
@@ -50,7 +45,7 @@ class ExtractedDates(BaseModel):
 try:
     structured_llm = llm.with_structured_output(ExtractedDates)
 except AttributeError as e:
-    print(f"❌ structured output 설정 오류: {e}")
+    print(f"structured output 설정 오류: {e}")
     exit()
     
 extraction_template = """
@@ -60,11 +55,13 @@ extraction_template = """
 지침:
 1. 날짜는 반드시 'YYYY-MM-DD' 형식으로 정규화해야 합니다. (예: 2025. 11. 15. -> 2025-11-15)
 2. 날짜가 명확히 언급되지 않거나 "상시" 등 특정할 수 없는 경우 'N/A'로 응답합니다.
-3. '마감일', '~까지' 등은 '종료 날짜(end_date)'로 간주합니다.
+3. **[중요] '마감일', '~까지'만 명시된 경우:** 해당 날짜는 '종료 날짜(end_date)'입니다. 이때 '시작 날짜'가 본문에 없다면, 문서 상단의 **'작성일', '수정일', '게시일'을 찾아 '시작 날짜'로 설정**하십시오.
 4. '신청 기간: A ~ B'인 경우, A는 '시작 날짜', B는 '종료 날짜'입니다.
 5. 텍스트에 기준 연도가 명시되지 않으면, [기준 연도]를 참고하여 YYYY를 결정하십시오.
-6. 본문의 'dates' 필드에 '최종 수정일'이 있다면, 이는 마감일이 아니라 문서의 수정일이므로 무시합니다.
+6. **[예외 처리]** 본문의 'dates' 필드나 상단의 '최종 수정일'은 원칙적으로 무시하지만, **접수 시작일이 명시되지 않은 경우에 한해 이를 '시작 날짜'로 사용**합니다.
 7. 마감일이 여러 개 나열된 경우(예: 서울대 (마감), 제주대 (마감)), 본문의 주요 마감일을 찾으십시오. 찾기 어려우면 'N/A'로 응답합니다.
+8. [우선순위] 대회, 공모전 등의 경우 '행사 기간'이 아닌 **'접수(신청) 기간'을 우선적으로 추출**하십시오.
+9. **[단일 날짜 처리]** 접수 마감일만 있고 시작일 추론이 불가능할 경우, Start와 End를 동일하게 설정하지 말고 Start는 'N/A' 혹은 (가능하다면) 작성일을 넣으십시오.
 
 ---
 [기준 연도]
@@ -109,7 +106,7 @@ def main():
                     
                     extracted_data = extraction_chain.invoke(input_data)
 
-                    time.sleep(3) # To prevent hitting free-tier rate limit (remove if using paid version)
+                    time.sleep(3) 
                     
                     notice['start_date'] = extracted_data.start_date
                     notice['end_date'] = extracted_data.end_date
@@ -119,15 +116,15 @@ def main():
 
 
                 except Exception as e:
-                    print(f"  ❌ [오류] 문서 처리 실패: {e}")
+                    print(f"[오류] 문서 처리 실패: {e}")
 
             output_path = file
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(augmented_results, f, indent=4, ensure_ascii=False)
                 
             print("\n" + "="*50)
-            print(f"✅ 모든 작업 완료. 결과가 '{output_path}'에 저장되었습니다.")
+            print(f"모든 작업 완료. 결과가 '{output_path}'에 저장되었습니다.")
         else:
-            print("⚠️ 처리할 데이터가 없습니다. 파일 경로를 확인하세요.")
+            print("처리할 데이터가 없습니다. 파일 경로를 확인하세요.")
 
 main()
