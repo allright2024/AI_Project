@@ -28,29 +28,31 @@ def get_llm_chain():
         structured_llm = llm.with_structured_output(ExtractedDates)
         
         extraction_template = """
-        You are an expert AI that extracts date information from text.
-        Analyze the given [Notice Text] and extract the 'Start Date (start_date)' and 'End Date (end_date)'.
-
-        Guidelines:
-        1. Dates must be normalized to 'YYYY-MM-DD' format. (e.g., 2025. 11. 15. -> 2025-11-15)
-        2. If the date is not clearly mentioned or is "always", respond with 'N/A'.
-        3. 'Deadline', 'until', etc. are considered 'End Date (end_date)'.
-        4. If 'Application Period: A ~ B', A is 'Start Date', B is 'End Date'.
-        5. If the reference year is not specified in the text, refer to [Reference Year] to determine YYYY.
-        6. If there is a 'Last Modified Date' in the 'dates' field of the body, ignore it as it is the modification date of the document, not the deadline.
-        7. If multiple deadlines are listed, find the main deadline of the text. If difficult to find, respond with 'N/A'.
-
+        당신은 텍스트에서 날짜 정보를 추출하는 전문 AI입니다.
+        주어진 [공지사항 텍스트]를 분석하여 '시작 날짜(start_date)'와 '종료 날짜(end_date)'를 추출하십시오.
+        
+        지침:
+        1. 날짜는 반드시 'YYYY-MM-DD' 형식으로 정규화해야 합니다. (예: 2025. 11. 15. -> 2025-11-15)
+        2. 날짜가 명확히 언급되지 않거나 "상시" 등 특정할 수 없는 경우 'N/A'로 응답합니다.
+        3. **[중요] '마감일', '~까지'만 명시된 경우:** 해당 날짜는 '종료 날짜(end_date)'입니다. 이때 '시작 날짜'가 본문에 없다면, 문서 상단의 **'작성일', '수정일', '게시일'을 찾아 '시작 날짜'로 설정**하십시오.
+        4. '신청 기간: A ~ B'인 경우, A는 '시작 날짜', B는 '종료 날짜'입니다.
+        5. 텍스트에 기준 연도가 명시되지 않으면, [기준 연도]를 참고하여 YYYY를 결정하십시오.
+        6. **[예외 처리]** 본문의 'dates' 필드나 상단의 '최종 수정일'은 원칙적으로 무시하지만, **접수 시작일이 명시되지 않은 경우에 한해 이를 '시작 날짜'로 사용**합니다.
+        7. 마감일이 여러 개 나열된 경우(예: 서울대 (마감), 제주대 (마감)), 본문의 주요 마감일을 찾으십시오. 찾기 어려우면 'N/A'로 응답합니다.
+        8. [우선순위] 대회, 공모전 등의 경우 '행사 기간'이 아닌 **'접수(신청) 기간'을 우선적으로 추출**하십시오.
+        9. **[단일 날짜 처리]** 접수 마감일만 있고 시작일 추론이 불가능할 경우, Start와 End를 동일하게 설정하지 말고 Start는 'N/A' 혹은 (가능하다면) 작성일을 넣으십시오.
+        
         ---
-        [Reference Year]
-        2025
-
-        [Notice Text]
-        Title: {title}
-        Content: {content}
-        (Reference dates field: {dates})
+        [기준 연도]
+        2025년
+        
+        [공지사항 텍스트]
+        제목: {title}
+        본문: {content}
+        (참고 dates 필드: {dates})
         ---
-
-        [Extraction Result (JSON)]
+        
+        [추출 결과 (JSON)]
         """
         
         prompt = ChatPromptTemplate.from_template(extraction_template)
