@@ -22,12 +22,12 @@ DIR = os.path.dirname(os.path.abspath(__file__))
 CRAWLERS = [
     "crawl.py",
     "crawl_chemistry_engineering.py",
-    "crawl_env_engineering.py"
+    "crawl_env_engineering.py",
+    "crawl_chem.py"
 ]
 DAYS=args.days
 
 def run_crawler(script_name):
-    """Runs a single crawler script using subprocess."""
     script_path = os.path.join(DIR, script_name)
     print(f"[{datetime.now()}] Starting crawler: {script_name}")
     try:
@@ -44,7 +44,6 @@ def run_crawler(script_name):
         print(f"Error Output:\n{e.stderr}")
 
 async def run_all_crawlers():
-    """Runs all registered crawlers sequentially."""
     print(f"[{datetime.now()}] Scheduled crawl started.")
     for crawler in CRAWLERS:
         await asyncio.to_thread(run_crawler, crawler)
@@ -62,7 +61,6 @@ async def run_all_crawlers():
 
 @app.on_event("startup")
 async def startup_event():
-    """Start the scheduler on app startup."""
     scheduler.add_job(
         run_all_crawlers,
         trigger=IntervalTrigger(hours=3),
@@ -75,19 +73,16 @@ async def startup_event():
 
 @app.on_event("shutdown")
 async def shutdown_event():
-    """Shutdown the scheduler on app shutdown."""
     scheduler.shutdown()
     print("Scheduler shutdown.")
 
 @app.post("/crawl")
 async def trigger_crawl(background_tasks: BackgroundTasks):
-    """Manually trigger all crawlers in the background."""
     background_tasks.add_task(run_all_crawlers)
     return {"message": "Crawl triggered in background"}
 
 @app.get("/health")
 async def health_check():
-    """Health check endpoint."""
     jobs = scheduler.get_jobs()
     job_info = [{"id": job.id, "next_run_time": job.next_run_time} for job in jobs]
     return {"status": "ok", "scheduled_jobs": job_info}

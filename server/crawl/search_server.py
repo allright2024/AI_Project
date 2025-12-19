@@ -23,7 +23,8 @@ CHROMA_DB_PATH = os.path.join(DIR, 'skku_notice_db')
 BM25_MODEL_PATH = os.path.join(DIR, 'bm25_model.pkl')
 CHUNK_DATA_PATH = os.path.join(DIR, 'all_chunks.pkl')
 COLLECTION_NAME = 'skku_notices'
-EMBEDDING_MODEL_NAME = "jhgan/ko-sbert-nli"
+FINETUNED_MODEL_PATH = os.path.join(DIR, '../../sbert/output/grid_search/lr_5e-05_bs_128_best')
+EMBEDDING_MODEL_NAME = os.path.abspath(FINETUNED_MODEL_PATH)
 
 app = FastAPI()
 
@@ -91,14 +92,19 @@ def extract_date_filter(query: str) -> dict:
     """
     
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         response = model.generate_content(prompt)
         text = response.text.replace("```json", "").replace("```", "").strip()
         date_info = json.loads(text)
+        
+        if date_info.get("start_date") is None and date_info.get("end_date") is None:
+            print(f"  → 날짜 미지정: 현재 날짜({current_date})를 기준으로 필터링합니다.")
+            return {"start_date": current_date, "end_date": current_date}
+        
         return date_info
     except Exception as e:
         print(f"LLM Date Extraction Error: {e}")
-        return {"start_date": None, "end_date": None}
+        return {"start_date": current_date, "end_date": current_date}
 
 def hybrid_search(query: str, top_k: int, date_filter: dict) -> List[SearchResult]:
     global chroma_collection, bm25_model, all_chunks
