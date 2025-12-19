@@ -57,11 +57,14 @@ python ai.py
 | `crawl.py`, `crawl_*.py` | 각 사이트별 크롤러 |
 | `llm_processor.py` | LLM 날짜 추출 처리 |
 | `embedding_processor.py` | ChromaDB + BM25 인덱싱 |
+| `extracted_dates.json` | 날짜가 추출된 json 파일 |
 
 ### sbert/
 SBERT 모델 학습 및 평가
 - `train_sbert.py` : Fine-tuning 스크립트
 - `output/` : 학습된 모델 저장 위치
+- `compare_models.py` : 기존 baseline 모델과 Fine-tuning 모델의 MAP@100 성능 측정
+- `cross_validation.py` : hyper parameter search with K-Folds(K = 3)
 
 ### data_augmentation/
 SBERT 학습 데이터 생성 (Gemini API 활용)
