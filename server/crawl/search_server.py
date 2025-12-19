@@ -75,20 +75,25 @@ def extract_date_filter(query: str) -> dict:
     """
     current_date = datetime.now().strftime("%Y-%m-%d")
     prompt = f"""
-    Current Date: {current_date}
-    User Query: "{query}"
+    [기준 날짜]: {current_date}
+    [사용자 요청]: "{query}"
     
-    Extract the date range implied by the user query.
-    If the user asks for "this week", calculate the start and end date of this week.
-    If "today", use today's date.
-    If no date is specified, return null.
+    위 [기준 날짜]를 바탕으로 [사용자 요청]에 포함된 날짜 범위를 추출해 주세요.
     
-    Return JSON format:
+    지침:
+    1. "이번 주", "다음 달"과 같은 상대적인 표현은 [기준 날짜]를 기준으로 시작일과 종료일을 계산하십시오.
+    2. "오늘"인 경우, 시작일과 종료일을 [기준 날짜]와 동일하게 설정하십시오.
+    3. 날짜와 관련된 정보가 전혀 없다면 null을 반환하십시오.
+    4. 모든 날짜 형식은 'YYYY-MM-DD'여야 합니다.
+    
+    다음 JSON 형식으로만 응답해 주세요:
     {{
         "start_date": "YYYY-MM-DD",
         "end_date": "YYYY-MM-DD"
     }}
-    If no date, return {{ "start_date": null, "end_date": null }}
+    
+    만약 날짜 정보가 없다면 다음을 반환하세요:
+    {{ "start_date": null, "end_date": null }}
     """
     
     try:
